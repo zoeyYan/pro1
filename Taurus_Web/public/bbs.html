@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="format-detection" content="telephone=no" />	
+		<title>天天社区</title>
+		<link rel="stylesheet" href="assets/css/lib/base.css">		
+    	<link rel="stylesheet" href="assets/css/lib/floatnav.css">		
+    	<link rel="stylesheet" href="assets/css/lib/menu.css">
+    	<link rel="stylesheet" href="assets/css/bbs.css">
+    	<link rel="stylesheet" href="assets/css/sweet-alert.css">	
+	</head>
+	<body>
+		<article>
+		<section class="topicItem" data-page="0" data-size = "5"  data-isfor="false">
+			<script type="template" id="article-topic">
+				{{#each this}}
+					<div class="itemBg" articleId={{article_id}}>
+						<header class="clearfix">
+							<span style="background-image: url({{#if author_image}}{{author_image}}{{else}}assets/image/setting/default-avatar.jpg{{/if}});"></span>
+							<span>
+								<p class="name">{{author_name}}</p>
+								<p class="time" ctime={{create_time}}></p>
+							</span>
+							<span class="themeName {{#if theme_name}}{{else}}null{{/if}}" theme_id={{theme_id}}>{{{theme_name}}}</span>
+						</header>
+						<p class="title">{{{article_name}}}</p>
+					    <div class="stockInfo222 hidden">
+					    	{{{content}}}	    	
+					    </div>
+					    <div class="stockInfo">
+					    	    	
+					    </div>
+					    {{#compare image_number ">=" "1"}}
+					     <section class="content clearfix">
+					      	<div class="itemImg">
+					             <div class="imgPro {{#if image_url1}}{{else}}null{{/if}}" style="background-image: url({{image_url1}});"></div>
+					        </div>
+					        <div class="itemImg">
+					             <div class="imgPro {{#if image_url2}}{{else}}null{{/if}}" style="background-image: url({{image_url2}});"></div>
+					        </div>  
+					        <div class="itemImg">
+					             <div class="imgPro {{#if image_url3}}{{else}}null{{/if}}" style="background-image: url({{image_url3}});"></div>
+					        </div>       
+					        
+					    </section>
+					    {{/compare}}
+					    <footer>
+						   <p>
+						   		<span class="base">
+						   			 <span class="textPro">评论</span>
+						   	         <span>(<span class="num">{{#if comments_number}}{{comments_number}}{{else}}0{{/if}}</span>)</span>
+									<span class="comment"></span>
+								</span>
+						   </p>
+							<p class="upLike" ariticleId={{article_id}}>
+								<span class="base">
+									 <span class="textPro">点赞</span>
+									   <span>(<span class="num likeNum">{{#if thumbs_number}}{{thumbs_number}}{{else}}0{{/if}}</span>)</span>
+									<span class="like"></span>
+								</span>
+							</p>
+						</footer>
+					</div>
+				</section>
+			{{/each}}	
+		</script>
+		</article>
+		
+		
+		<div class="menu">
+			<div class="menuBtn">
+				 <p>股市策略</p>
+				 <ul class="nav">
+				 	<li><a href="index.html">节目主页</a></li>
+				 	<li><a href="hot.html">热门策略</a></li>
+				 	<li><a href="ask.html">热门活动</a></li>
+				 </ul>
+			</div>
+			<div class="menuBtn">
+				 <p>元老汇</p>
+				 <ul class="nav">
+				 	<li><a href="order.html">元老级</a></li>
+				 	<li><a href="ordercommon.html">平民级</a></li>
+				 </ul>
+			</div>
+			<div class="menuBtn">
+				<p>天天社区</p>
+				 <ul class="nav">
+				 	<li><a href="bbs.html">天天社区</a></li>
+				 	<li><a href="myself.html">个人主页</li>
+				 	<li><a href="apply.html">报名直通车</li>	
+				 </ul>
+			</div>
+		</div>
+		<div class="fcwm-mask"></div>
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>		
+		<script src="assets/js/lib/blooming-menu.min.js"></script>
+		<script src="assets/js/lib/floatnav.js"></script>
+		<script src="assets/js/lib/menu.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_share.js"></script>
+		<script src="assets/js/bbs.js"></script>
+	</body>
+</html>

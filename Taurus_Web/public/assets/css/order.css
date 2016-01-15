@@ -1,0 +1,152 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: helvetica;
+	background-color: #f7f7f7;
+}
+header{
+	width: 100%;
+	height: 40px;
+	background-color: #fff;
+	border-bottom: 1px solid #eaeaea;
+	position: fixed;
+	z-index: 50;
+	top: 0;
+	
+}
+header span{
+	width: 33.3333333333333333333333%;
+	display: inline-block;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    color: #666666;
+    font-size: 15px;
+}
+.navBg{
+	background-color: #4155b4;
+	color: #fff;
+}
+section{
+	margin-top: 10px;
+	width: 100%;
+	height: 60px;
+	border-top:1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	background-color: #fff;
+	position: relative;
+}
+
+.headImg{
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	float: left;
+	margin-left: 30px;
+	background-size: cover;
+	margin-top: 5px;
+	position: relative;
+}
+.name{
+	display: inline-block;
+	margin-left: 20px;
+	line-height: 60px;
+	color: #333333;
+	font-size: 15px;
+}
+.itemInfo{
+	width: 100px;
+	height: 58px;
+	float: right;
+	background-color: #ee5b43;
+	text-align: center;
+}
+.itemInfo p{
+	color: #fff;	
+}
+.itemInfo p:first-child{
+	margin-top: 12px;
+	font-size: 18px;
+}
+.itemInfo p:first-child span{
+	font-size: 10px;
+	color: #fff;
+	opacity: 0.5;
+}
+.itemInfo p:last-child{
+	font-size: 10px;
+	color: #fff;
+	opacity: 0.5;
+}
+.label{
+	
+	width: 25px;
+	height: 30px;
+	
+	position: absolute;
+	top: 0;
+}
+.labelFirst{
+	background: url(../image/order/sign-1st.png) no-repeat center center;
+	background-size: cover;
+}
+.labelSecond{
+	background: url(../image/order/sign-2nd.png) no-repeat center center;
+	background-size: cover;
+}
+.labelThird{
+	background: url(../image/order/sign-3rd.png) no-repeat center center;
+	background-size: cover;
+}
+.first{
+	background-color: #e01f00 !important;
+}
+.second{
+	background-color: #0083ff !important;
+}
+.third{
+	background-color: #4155b4 !important;
+}
+.space{
+	width: 100%;
+	height: 70px;
+}
+.vIcon{
+	width: 16px;
+	height: 16px;
+	background:url(../image/common/icon-v.png) no-repeat center center;
+	background-size: cover;
+	position: absolute;
+	right: -5px;
+    bottom: 0;
+}
+section span{
+	display: inline-block;
+}
+.dayList,.weekList,.monthList{
+	height: 100%;
+	overflow: scroll;
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+.cColor{
+	background-color: #2cbb00 !important;
+}
+.coInfo{
+	width: 33%;
+	float: left;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	margin-left: 10px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.name{
+	height: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 85%;
+}

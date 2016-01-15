@@ -1,0 +1,199 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	text-decoration: none;
+	overflow: hidden;
+}
+.beginning{
+	width: 100%;
+	height: 100%;
+	background-image:url(../image/ask/begin.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.beginning>img{
+	width: 50%;
+}
+.title{
+	width: 86%;
+	padding-top: 30px;
+	text-align: center;
+	margin: 0 auto;
+}
+.titleImg{
+	width: 100%;
+	-webkit-animation: myfirst 3s;
+/*	-webkit-animation-iteration-count: 1;*/ 
+	display: block;
+}
+.people{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top:28px;
+}
+.people>img{
+	width: 100%;
+	/*height: 100%;*/
+}
+.start{
+	width: 100%;
+	text-align: center;
+}
+.ready{
+	width: 40%;
+	-webkit-animation: myfirst 2s;
+	-webkit-animation-timing-function: ease;
+	display: block;
+}
+.hidden{
+	display: none;
+}
+.content{
+	width: 100%;
+	height: 100%;
+	background-color: #f4a636;
+	/*display: none;*/
+	overflow: hidden;
+	margin: 0 auto;
+}
+.one{
+	width: 80%;
+	height: 80%;
+	margin: 0 auto;
+	text-align: center;
+	padding-top:30px ;
+}
+.topic{
+	width: 100%;
+}
+.topic>img{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.choose{
+	position: relative;
+	width: 100%;
+	/*height: 50px;*/
+}
+input{
+	width: 100%;
+	height: 50px;
+	z-index: 111;
+	position: absolute;
+	opacity: 0;
+}
+input[type="radio"]{
+  	width: 100%;
+	height: 50px;
+	z-index: 111;
+	position: absolute;
+	opacity: 0;
+}
+.inputHight{
+	padding-bottom: 25px;
+}
+.option{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.circle{
+	position: absolute;
+	top: -5px;
+	width: 12%;
+	left: 0;
+}
+.ikonOne{
+	width: 100%;
+	text-align: center;
+}
+.ikonOne>img{
+	width: 80%;
+}
+.btn{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top:12px;
+	bottom: 10px;
+	height: 50px;
+	/*border: 1px solid;*/
+	/*position: absolute;*/
+}
+.button{
+	width: 40%;
+	bottom: 20px;
+}
+.selected{
+	display: block;
+}
+.result{
+	width: 32%;
+	position: absolute;
+	left: 127px;
+	z-index: 222;
+	opacity:0;
+}
+.scoreOne,.scoreTwo,.scoreThree{
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+}
+.explain1{
+	width: 80%;
+	text-align: center;
+	margin: 0px auto;
+	padding-top: 20px;
+}
+.explain1>img{
+	width: 100%;
+	display: block;
+	text-align: center;
+	margin: 0px auto;
+}
+.personR{
+	width: 100%;
+}
+.shareBtn{
+	margin-top: 10px;
+}
+.exponent1{
+	opacity: 0;
+}
+.explain{
+	opacity: 0;
+}
+.shareBtn{
+	opacity: 0;
+}
+.shareBtn img{
+	display: inline-block;
+	width: 40%;
+	float: left;
+	margin-top: 20px;
+}
+.sharelink{
+	float: right!important;
+}
+.sharefriend{
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity:0.8;
+	position: absolute;
+	top:0px;
+}
+.sharefriend>img{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.answerimg2,.answerimg5{
+	width: 75%!important;
+}

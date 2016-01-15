@@ -1,0 +1,15 @@
+    .blooming-menu__item:nth-of-type(1) .blooming-menu__item-btn {
+      background-image: url(../../image/nav/icon-edit.png);
+    }
+    .blooming-menu__item:nth-of-type(2) .blooming-menu__item-btn {
+      background-image: url(../../image/nav/icon-home.png);
+    }
+
+    .blooming-menu__item:nth-of-type(3) .blooming-menu__item-btn {
+      background-image: url(../../image/nav/icon-recom.png);
+    }
+    .blooming-menu__item-btn:hover {
+      box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+      opacity: 1;      
+    }
+    

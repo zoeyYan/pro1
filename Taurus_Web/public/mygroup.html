@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="format-detection" content="telephone=no" />	
+    	<link rel="stylesheet" href="assets/css/lib/base.css">
+    	<link rel="stylesheet" href="assets/css/mygroup.css">
+    	<link rel="stylesheet" href="assets/css/sweet-alert.css">	
+		<title>圈子</title>
+	</head>
+	<body>
+		<div  class="cirContent hidden">		 
+				<ul class="item">
+				</ul>
+	  	</div>
+	  	<div class="nothing hidden">
+	  		<div class="nothingLabel">
+	  			<img src="assets/image/bbs/icon-comm.png">
+	  			<p class="nothingNote">还没有任何帖子哦，赶快去加入圈子，开始发帖吧。</p>
+	  		</div>
+	  		<div class="copyright">由全天互动团队提供技术支持</div>
+	  	</div>
+	    <script type="template" id="circle-item">	    	
+			   {{#each this}}		      
+						<a href="group.html?theme_id={{theme_id}}"><li>{{theme_name}}</li></a>			
+			   {{/each}}
+		   </ul>
+		</script>
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_bbs.js"></script>
+		<script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="assets/js/mygroup.js"></script>
+	</body>
+</html>

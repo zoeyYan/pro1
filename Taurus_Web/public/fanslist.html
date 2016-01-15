@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" href="assets/css/lib/base.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/fanlist.css" />	
+		<link rel="stylesheet" href="assets/css/sweet-alert.css">
+		<title>粉丝</title>
+	</head>
+	<body>
+		<head>
+			<ul class="chose">
+				<li class="fan">粉丝</li>
+				<li class="att">关注</li>
+			</ul>
+		</head>
+		<div class="content">
+			<div class="fans hidden" data-page="0" data-size="15" data-isfor="false">
+				<script type="template" id="fans-tmp">
+                    {{#each this}}
+						<ul class="fans-item isFans" isfans={{isSelected}} is_verified={{is_verified}} >
+							<a href="member.html?id={{id.accountId}}"><li><img id="userPic" src="{{#if head_image}}{{head_image}}{{else}}assets/image/setting/default-avatar.jpg{{/if}}"></li>
+							<li class="inFor" ><span id="username">{{name}} <span class="vLabel addHide fansLogo"></span></span><span id="userid">id:{{search_id}}</span></li>
+							</a>
+		     				<li><img  class="focus hidden fansBtns" mms={{id.accountId}} src="assets/image/fanslist/btn-follow-grey.png"/><img  class="focused hidden fansBtned"  mms={{id.accountId}} src="assets/image/fanslist/btn-followed-grey.png"/></li>
+						</ul>
+					{{/each}}
+                </script>
+			</div>
+			<div class="ifans hidden" data-page="0" data-size="15" data-isfor="false">
+				<script type="template" id="fans-tmp2">
+                    {{#each this}}
+						<ul class="fans-item isFansed" is_verified={{is_verified}}>
+							<a href="member.html?id={{id.accountId}}"><li><img id="userPic" src="{{#if head_image}}{{head_image}}{{else}}assets/image/setting/default-avatar.jpg{{/if}}"/></li>
+							<li class="inFor"><span id="username">{{name}} <span class="vLabel addHide ifansLogo"></span></span><span id="userid">id:{{search_id}}</span></li>
+							</a>
+		     				<li><img  class="focus hidden ifansBtns"  mms={{id.accountId}} src="assets/image/fanslist/btn-follow-grey.png"/><img  class="focused ifansBtned"  mms={{id.accountId}} src="assets/image/fanslist/btn-followed-grey.png"/></li>
+						</ul>
+					    
+					{{/each}}
+                </script>
+			</div>
+		</div>
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_sharecopy.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="assets/js/fanslist.js"></script>
+	</body>
+</html>

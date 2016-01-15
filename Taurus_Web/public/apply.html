@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" href="assets/css/apply.css" type="text/css"/>
+		<link rel="stylesheet" href="assets/css/sweet-alert.css">
+		<title>报名直通车</title>
+	</head>
+	<body>
+		<header>
+		《股市天天向上》第三季报名直通车
+		</header>
+		
+		<div class="content">
+			<div class="block"></div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="named">姓名</span></p>
+				<p class="hint1 hidden" id="nameReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<input type="text" id="name1"/>
+			</div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="sexd">性别</span></p>
+				<p class="hint1 hidden" id="sexReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+					<select id="sex">
+						<option value="0">请选择</option>
+						<option value="男">男</option>
+						<option value="女">女</option>
+					</select>
+			</div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="aged">股龄</span></p>
+				<p class="hint1 hidden" id="ageReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<input type="text" id="age" placeholder="请输入数字"/><span class="unit">年</span>
+			</div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="city">城市</span></p>
+				<p class="hint1 hidden" id="cityReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<div class="clear"></div>
+				<select class="add add1" id="seachprov" name="seachprov"  onChange="changeComplexProvince(this.value, sub_array, 'seachcity' );"></select>
+			    <select class="add add2" id="seachcity"  name="homecity" onChange="changeCity(this.value);"></select>
+			    <select class="add add3 hidden" id="seachdistrict"  name="seachdistrict"></select>
+			</div>
+			<div class="clear"></div>
+			<!--<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="edu">学历</span></p>
+				<p class="hint1 hidden" id="eduReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<select id="edu">
+					<option value="0">学历</option>
+					<option value="小学">小学</option>
+					<option value="中学">中学</option>
+					<option value="大学">大学</option>
+					<option value="研究生以上">研究生以上</option>
+				</select>
+			</div>	-->
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="phone">手机</span></p>
+				<p class="hint1 hidden" id="phoneReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<input type="text" id="phone"/>
+			</div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="email">邮箱</span></p>
+				<p class="hint1 hidden" id="emailReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<input type="text" id="email"/>
+			</div>
+			<!--<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="marry">婚姻状况</span></p>
+				<p class="hint1 hidden" id="marryReminder"><span class="circle">!</span><span>请选择婚姻状况</span></p>
+				<div class="clear"></div>
+				<select id="marry">
+					<option value="0">请选择</option>
+					<option value="已婚">已婚</option>
+					<option value="未婚">未婚</option>
+				</select>
+			</div>	-->
+			<div class="news">
+				<p class="newsTitle">考核信息</p>
+				<p>注意：以下炒股盈利模式是选拔选手的第一考核项，将根据您的盈利模式的可操作性、新颖性、安全性、稳定性和可持续性来考核。炒股经历和性格描述选项是选手选拔的第二项考核，以下请报名者尽可能详细填写。</p>
+				<div class="clear"></div>
+			</div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="ways">自荐理由</span></p>
+				<p class="hint1 hidden" id="waysReminder"><span class="circle">!</span><span>不能超过二百个字哦</span></p>
+				<textarea id="ways"></textarea>
+			</div>
+			<!--<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="experience">炒股经历（按年份）</span></p>
+				<p class="hint1 hidden" id="expReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<textarea id="experience"></textarea>
+			</div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="myself">自我性格描述</span></p>
+				<p class="hint1 hidden" id="myselfReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<textarea id="myself"></textarea>
+			</div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="opinoin">对目前市场的看法</span></p>
+				<p class="hint1 hidden" id="opinoinReminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<textarea id="opinoin"></textarea>
+			</div>
+			<div class="outbox">
+				<p class="hint"><span id="symbol">*</span><span class="selfExperience">个人经历（包括学习、工作、生活，按年份填写）</span></p>
+				<p class="hint1 hidden" id="selfexpRenminder"><span class="circle">!</span><span>请填写正确的信息</span></p>
+				<div class="clear"></div>
+				<textarea id="selfExperience"></textarea>
+			</div>-->
+			<button type="button" id="submit" value="提交">提交</button>
+			<button type="reset" id="reset"/>重置</button>
+		</div>
+		<div class="black">
+          <div class="spinner">
+            <div class="spinner-container container1">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+          </div>
+          <p>正在上传...</p>
+        </div>
+        <div class="clear"></div>
+        <div class="copyright">由全天互动团队提供技术支持</div>
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_shareApply.js"></script>
+	    <script src="assets/js/lib/Area.js"></script>
+	    <script src="assets/js/lib/AreaData_min.js"></script>
+	    <script src="assets/js/lib/utils.js"></script>
+	    <script src="assets/js/lib/net.js"></script>
+		<script src="assets/js/apply.js"></script>
+	</body>
+</html>

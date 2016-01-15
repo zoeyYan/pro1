@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<link rel="stylesheet" type="text/css" href="assets/css/sweet-alertcopy.css">
+    	<link rel="stylesheet" type="text/css" href="assets/css/publish.css" />    	
+		<title></title>
+	</head>
+	<body>
+		<div class="art-container" data-page="0" data-size = "25"  data-isfor="false">
+			<script type="template" id="art-tmp">
+	        	{{#each this}}
+					<div class="content">
+						<a href="bbsdetail.html?articleId={{article_id}}"><span class="artcon">
+			            	<p class="title">{{article_name}}</p>
+			            </span></a>
+			            <span class="a-del" ariticleId={{article_id}}></span>
+					</div>
+				{{/each}}
+	        </script>
+        </div> 
+		<div class="back"><!--这个div是当用户没有发帖的时候所显示的页面-->
+            <p>还没有任何贴子哦，赶快去发贴吧。</p>
+        </div>
+        <script src="assets/js/lib/jquery-2.1.3.min.js"></script>        
+    	<script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+    	<script src="assets/js/lib/sweet-alert.min.js"></script>
+    	<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_bbs.js"></script>
+    	<script src="assets/js/publish.js"></script>
+	</body>
+</html>

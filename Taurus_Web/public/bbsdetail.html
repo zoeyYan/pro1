@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="format-detection" content="telephone=no" />		
+		<title></title>
+		<link rel="stylesheet" href="assets/css/lib/base.css">
+		<link rel="stylesheet" href="assets/css/bbsdetail.css">	
+		<link rel="stylesheet" href="assets/css/reply.css">	
+		<link rel="stylesheet" href="assets/css/sweet-alert.css">	
+	</head>
+	<body>
+		<article class="showCom">
+		  <div class="container conscroll" data-page="0" data-size="50" data-isfor="false">
+			<section class="headBolg">
+				<script type="template" id="blog-item">
+				<header class="head clearfix">
+					<span class="headImg" pId={{user_id}} style="background-image: url({{#if author_image}}{{author_image}}{{else}}assets/image/setting/default-avatar.jpg{{/if}})"></span>
+					<span class="headInfo" style="background: url();">
+						<p><span class="name">{{author_name}}</span><span class="lable">楼主</span></p>
+						<p><span class="time" time={{create_time}}>/span></p>
+					</span>
+				</header>
+				<div class="title clearfix">
+					<span class="support mbtn hidden">顶</span>
+					<span class="classic mbtn hidden">精</span>
+					<span class="title_info">{{{article_name}}}</span>
+				</div>
+				<div class="contentInfo22222 hidden">{{{content}}}</div>
+				<div class="contentInfo"></div>
+				{{#compare image_number ">=" "1"}}
+				<div class="contentImg clearfix">
+					<img src="{{image_url1}}" class="img-item {{#if image_url1}}{{else}}null{{/if}}">
+                    <img src="{{image_url2}}" class="img-item {{#if image_url2}}{{else}}null{{/if}}">
+                    <img src="{{image_url3}}" class="img-item {{#if image_url3}}{{else}}null{{/if}}">
+                    <img src="{{image_url4}}" class="img-item {{#if image_url4}}{{else}}null{{/if}}">
+                    <img src="{{image_url5}}" class="img-item {{#if image_url5}}{{else}}null{{/if}}">
+                    <img src="{{image_url6}}" class="img-item {{#if image_url6}}{{else}}null{{/if}}">
+                    <img src="{{image_url7}}" class="img-item {{#if image_url7}}{{else}}null{{/if}}">
+                    <img src="{{image_url8}}" class="img-item {{#if image_url8}}{{else}}null{{/if}}">
+                    <img src="{{image_url9}}" class="img-item {{#if image_url9}}{{else}}null{{/if}}">
+				</div>
+				{{/compare}}				
+				<div class="foot">
+					<p class="onCommit">
+						<span class="base">
+						<span class="textPro">评论</span>
+						<span>(<span class="num">{{#if comments_number}}{{comments_number}}{{else}}0{{/if}}</span>)</span>
+						<span class="comment"></span>
+						</span>
+					</p>
+					<p class="upLike" ariticleId={{article_id}}>
+						<span class="base">
+						<span class="textPro">点赞</span>
+						<span>(<span class="num likeNum">{{#if thumbs_number}}{{thumbs_number}}{{else}}0{{/if}}</span>)</span>
+						<span class="like"></span>
+						</span>
+					</p>
+				</div>
+				</script>
+			</section>	
+			     
+				    <div class="commitItem">
+					 <script type="template" id="comment-tmp">
+                			{{#each this}}
+                			<div class="homeCommit">
+								<div class="bbsHead" data-id="{{comments}}">
+									<span class="bbsHeadImg" pId={{user_id}} style="background-image:url({{#if author_image}}{{author_image}}{{else}}assets/image/setting/default-avatar.jpg{{/if}})"></span>
+									<span class="bbsHeadInfo clearfix">
+										<p class="bbsName" >{{author_name}}</p>
+										<p class="bbsTime" time={{create_time}}></p>
+									</span>
+								</div>
+								<p class="commitFirst">{{{content}}}</p>
+								<div class="secondCommit" cId={{comments}} id="secondCommit-{{@index}}">
+									
+								</div>
+								<div class="bbsLabel">
+									<span class="clearfix mms" artId={{comments}}>
+												<p class="bbsCommitLable"></p>
+												<p class="bbsCommitNum">{{#if comments_number}}{{comments_number}}{{else}}0{{/if}}</p>
+									</span>
+									<span class="clearfix">
+											<p class="bbsLikeLabel" artId={{comments}}></p>
+											<p class="bbsLikeNum">{{#if thumbs_number}}{{thumbs_number}}{{else}}0{{/if}}</p>
+									</span>
+								</div>
+							</div>
+							{{/each}}
+	                </script>	
+				   </div>
+			    
+				</div><!--contanier-->
+				<script type="template" id="com2-tmp">
+	   				{{#each this}}
+				   <div class="bbsWords">
+						<span class="commitName" pId={{user_id}}>{{author_name}}</span><span class="commitWords">:{{{content}}}</span>
+				   </div>
+				   {{/each}}
+            	</script>
+		</article>
+		
+		<article class="replyShow hidden">
+			<div class="content_rp">
+			<textarea id="target_rp" value="说些什么吧(512字内哟！)"></textarea>
+			<div class="SpeedBar_rp">
+				<p class="face_rp"><img id="facemasg_rp" src="assets/image/topic/btn-emo.png" /></p>
+				<p id="btn_rp"><img src="assets/image/topic/btn-topic.png"/></p>
+			</div>
+		</div>
+		<div  class="replyBtn">
+			<p class="sendBtn_rp">
+				<span>发送</span>
+			</p>
+			<p class="cancleBtn_rp">
+				<span>取消</span>
+			</p>
+		</div>
+				
+		<div class="black">
+          <div class="spinner">
+            <div class="spinner-container container1">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+          </div>
+          <p>正在上传...</p>
+        </div>
+		</article>
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>
+		<script src="assets/js/lib/handlebars-v3.0.3.js"></script>		
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_share.js"></script>
+		<script src="assets/js/lib/jquery.qqFace.js"></script>
+		<script src="assets/js/reply.js"></script>
+		<script src="assets/js/bbsdetail.js"></script>
+	</body>
+</html>

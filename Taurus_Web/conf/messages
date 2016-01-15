@@ -1,0 +1,4 @@
+domain = http://stocktest.24-7.com.cn/
+server = http://testfcwm.24-7.com.cn/
+server.verify = weixin/verify/
+appId = 7248d7fc-1fab-45a6-87fe-5b57e03ac425

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="format-detection" content="telephone=no" />
+    	<link rel="stylesheet" href="assets/css/lib/base.css">
+    	<link rel="stylesheet" href="assets/css/lib/swiper.css">	
+    	<link rel="stylesheet" href="assets/css/vedio.css">
+    	<link rel="stylesheet" href="assets/css/sweet-alert.css">	
+		<title>视频</title>
+	</head>
+	<body>
+		<header>			    
+			 <div id="video-swiper" class="swiper-container">
+		        <div class="swiper-wrapper" id="video-wrapper"> </div>		
+				        <!-- 动态生成里面的子项 -->
+				        <script type="template" id="video-slide-tmp">
+				        {{#each this}}
+				        	<div class="swiper-slide" id="youkuplayer{{addOne @index}}" style="height:180px;" data-vid ="" >
+				            <iframe height=100% width=100% src="{{url}}" frameborder=0 allowfullscreen></iframe>
+				            <p class="say">{{words}}</p>
+				          </div>
+				        {{/each}}
+				        </script>
+				        <!-- Add Pagination -->
+		        <div class="swiper-pagination"> </div>
+   			 </div>
+		</header>
+		<div class="content clearfix">
+			   <script type="template" id="video-small-tmp">
+			   	    {{#each this}}
+				        	<div class="item" id="youkuplayer{{addOne @index}}" style="height:150px;" data-vid ="">
+				            <a href="vodiomore.html?source={{url}}"><div class="fakeLa"></div></a>
+				            <iframe height=90% width=100% src="{{url}}" frameborder=0 allowfullscreen></iframe>
+				            <p>{{words}}</p>				           
+				        	</div>
+				     {{/each}}			   	
+			   </script> 					
+			   <div class="clear"></div>
+		</div>	
+		
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>		
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_share.js"></script>
+		<script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+		<script src="assets/js/lib/swiper.jquery.min.js"></script>		
+		<script src="assets/js/video.js"></script>
+	</body>
+</html>

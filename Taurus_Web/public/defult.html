@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<link rel="stylesheet" href="assets/css/lib/base.css">	
+    	<link rel=" stylesheet" href="assets/css/defultActive.css" type="text/css"/>
+    	<link rel="stylesheet" href="assets/css/lib/menu.css">
+    	<link rel="stylesheet" href="assets/css/sweet-alert.css">	
+		<title>热门活动</title>
+	</head>
+	<body>
+		<!--<img src="assets/image/defultActive/sign-cal.png"/>
+		<span id="words">还没有活动哦</span>-->
+		<div class="select">
+			<form name="table" class="table">
+				<p>1、当多薪加班和旅行计划相冲突时，你会？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">A、   旅行，钱财乃身外之物</span>
+						<div class="cricle"></div>
+					</div>
+					<div class="choose">
+						<input type="radio" name="aaa" id="pitch" value="1"><span class="content">B、 向钱看，向厚赚，放弃旅行</span>
+						<div class="cricle"></div>
+					</div>
+					<div class="choose">
+						<input type="radio" name="aaa" id="pitch" value="4"><span class="content">C、 加几天班，旅行几天</span>
+						<div class="cricle"></div>
+					</div>
+					<div class="choose">
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">D、 先加班再休假旅行</span>
+						<div class="cricle"></div>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>2、古玩价格疯涨，你会？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="3"><span class="content">A、 低价抢高价卖</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="1"><span class="content">B、 垄断市场</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">C、 集资收购，展出收取门票</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="3"><span class="content">D、 不去理会，有钱任性</span>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>3、吃不下的美味佳肴，你会？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="4"><span class="content">A、 果断扔掉</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">B、撑死也要吃光</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">C、换一种口味就能吃下去了</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="1"><span class="content">D、给别人吃</span>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>4、偶得一棵神奇果树，你会？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="4"><span class="content">A、 直接吃掉果子</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">B、 包装后高价卖</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">C、 守着这棵树</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">D、 坐等发现第“二”牛顿定律</span>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>5、结账时旁边队伍速度快于自己队伍？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="3"><span class="content">A、 哪快就去哪</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">B、 站在原地等</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="4"><span class="content">C、 拿零食让小朋友排队</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">D、 将腿伸出去，霸占两队</span>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>6、一直苦苦追求的女孩说：“我到底哪点好呀，我改还不行吗。”对此，你的反应是？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="1"><span class="content">A、  坚决不放弃</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="4"><span class="content">B、  还是死心了吧</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">C、 以后再也不去招惹同类型女孩了</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">D、 多好的女孩，愿意为我而“改变”</span>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>7、你买下的商品房，因为政策突然跌价，你将怎么办？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="4"><span class="content">A、 趁价高赶紧出手</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">B、 讨个说法，像“世上最牛钉子户”那样</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">C、 静观其变，房子都曾升值过</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">D、 坚决不卖，有房子住总比没房子强</span>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>8、张强身体健壮喜欢观察动物。判断他的职业？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">A、 驯兽师</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">B、驯兽师以及健美教练</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">C、动物保护组织的成员</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="4"><span class="content">D、媒体工作者</span>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>9、旧爱优秀回归，你会选择旧爱还是新欢？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">A、谁好我就跟谁跑</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="3"><span class="content">B、难以抉择，分别考察两个人</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">C、脚踩两只船</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="1"><span class="content">D、好马不吃回头草</span>
+					</div>
+				</div>
+			</form>
+			<form name="table" class="table hidden">
+				<p>10、参加重要聚会，你会去常去理发店还是新开从没去过但口碑不错的理发店？</p>
+				<div align="left" class="middle">
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="2"><span class="content">A、 常去的那家，避免出错</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="4"><span class="content">B、 听大家的，去新开的那家</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="0"><span class="content">C、 一家理一半，再作比较</span>
+					</div>
+					<div class="choose">
+						<div class="cricle"></div>
+						<input type="radio" name="aaa" id="pitch" value="1"><span class="content">D、 剪个圆寸吧，人美什么发型都好看</span>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div class="rusult">
+			<div id="Highscore" class="hidden">
+				<div class="explain">
+					
+				</div>
+			</div>
+			<div id="Finescore" class="hidden">
+				<div class="explain">
+					
+				</div>
+			</div>
+			<div id="Middlescore"  class="hidden">
+				<div class="explain">
+				</div>
+			</div>
+			<div id="lowscore"  class="hidden">
+				<div class="explain">
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="sHare hidden">
+			<img src="assets/image/defultActive/score-share.png" />
+		</div>
+		
+		
+		
+		
+		
+		<div class="menu">
+			<div class="menuBtn">
+				 <p>股市策略</p>
+				 <ul class="nav">
+				 	<li><a href="index.html">节目主页</a></li>
+				 	<li><a href="hot.html">热门策略</a></li>
+				 	<li><a href="defult.html">热门活动</a></li>
+				 </ul>
+			</div>
+			<div class="menuBtn">
+				 <p>元老汇</p>
+				 <ul class="nav">
+				 	<li><a href="order.html">元老级</a></li>
+				 	<li><a href="ordercommon.html">平民级</a></li>
+				 </ul>
+			</div>
+			<div class="menuBtn">
+				<p>天天社区</p>
+				 <ul class="nav">
+				 	<li><a href="bbs.html">天天社区</a></li>
+				 	<li><a href="myself.html">个人主页</li>
+				 	<li><a href="apply.html">报名直通车</li>	
+				 </ul>
+			</div>
+		</div>
+		<div class="fcwm-mask"></div>
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+<!--		<script src="assets/js/lib/net.js"></script>-->
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/defult.js"></script>
+		<script src="assets/js/lib/weixin-share.js"></script>
+		<script src="assets/js/lib/menu.js"></script>
+	</body>
+	
+</html>

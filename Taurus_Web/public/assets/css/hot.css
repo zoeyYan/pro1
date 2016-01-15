@@ -1,0 +1,101 @@
+header{
+	width: 100%;
+	height: 50px;
+	margin-bottom: 10px;
+	position: fixed;
+}
+.main{
+	height: 100%;
+	width: 100%;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	background-color: #f7f7f7;
+	font-family: helvetica;
+	overflow: hidden;
+	font-size: 14px;
+}
+header>span{
+	display: inline-block;
+	width: 50%;
+	height:50px;
+	text-align: center;
+	line-height: 50px;
+	color: #4155b4;
+	float: left;
+	background-color: #fff;
+}
+.addColor{
+	background-color: #4155b4 !important;
+	color: #fff;
+}
+.noPhoto{
+	
+}
+.strategy{
+	width:auto;
+	margin-left: 5px;
+	margin-right: 5px;
+	height: 70px;
+	background-color: #eaeaea;
+	margin-top: 10px;
+}
+.head{
+	width: 100px;
+	height: 70px;
+	background-size: cover;
+    float: left;
+}
+.headInfo{
+	margin-left: 100px;
+	padding: 10px;
+
+}
+.title{
+	font-size: 16px;
+	color: #4055b3;
+    overflow: hidden;   
+   -webkit-text-overflow: ellipsis;
+   -moz-text-overflow: ellipsis;
+   -o-text-overflow: ellipsis;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.tips{
+	font-size: 10px;
+	color: #999999;
+}
+.time{
+	margin-left: 20px;
+}
+.noTitle{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 7px;
+	padding-bottom: 5px;
+	color: #4155b4;
+	font-size: 16px;
+    width: 100%;
+    overflow: hidden;
+  -webkit-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.noTips{
+	font-size: 10px;
+	color: #999999;   
+    padding-left: 10px;
+}
+.morning,.afternoon{
+	height: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	overflow: scroll;
+}

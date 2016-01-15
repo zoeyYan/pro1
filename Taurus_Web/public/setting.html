@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="format-detection" content="telephone=no" />
+		<title>设置</title>
+		<link rel="stylesheet" href="assets/css/lib/base.css">
+		<link rel="stylesheet" href="assets/css/setting.css">
+		<link rel="stylesheet" href="assets/css/sweet-alert.css">	
+	</head>
+	<body>
+		<header>
+			<input type="file" class="headImg">
+			<div  class="headUrl"></div>
+			<span class="myInfo">
+				<p>我的头像</p>
+				<p>ID：<span id="ID"></span></p>
+			</span>
+			<span class="label"></span>
+		</header>
+		<section class="clearfix">
+			<div class="title"><span>姓名</span></div>				
+			<div class="info">
+				<p id="name"></p>
+				<div class="hidden typeIn"><input type="text" class="name enter"></div>
+			</div>
+		</section>
+		<section class="clearfix">
+			<div class="title"><span>性别</span></div>				
+			<div class="info">
+				<p id="sex"></p>
+				<div class="typeIn">
+					<select class="sex" style="width: 250px;">
+						<option value="2">请选择</option>
+			        	<option value="0">男</option>
+			        	<option value="1">女</option>
+					</select>
+				</div>
+			</div>
+		</section>
+		<section class="clearfix">
+			<div class="title"><span>生日</span></div>				
+			<div class="info">
+				<p id="birth"></p>
+				<div class="hidden typeIn"><input style="width: 250px;" type="date" class="birthday enter"></div>
+			</div>
+		</section>		
+		<section class="clearfix areaBtn">
+			<div class="title"><span>地区</span></div>				
+			<div class="info">
+				<p class="showArea"></p>
+				<div class="hidden typeIn"><input type="text" style="width: 250px;" class="area enter"></div>
+			</div>
+		</section>
+		<div class="black">
+			  <div class="spinner">
+			    <div class="spinner-container container1">
+			      <div class="circle1"></div>
+			      <div class="circle2"></div>
+			      <div class="circle3"></div>
+			      <div class="circle4"></div>
+			    </div>
+			    <div class="spinner-container container2">
+			      <div class="circle1"></div>
+			      <div class="circle2"></div>
+			      <div class="circle3"></div>
+			      <div class="circle4"></div>
+			    </div>
+			    <div class="spinner-container container3">
+			      <div class="circle1"></div>
+			      <div class="circle2"></div>
+			      <div class="circle3"></div>
+			      <div class="circle4"></div>
+			    </div>
+			  </div>
+			  <p>正在上传...</p>
+		</div>
+		<footer><p>提交</p></footer>		
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>	
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_setting.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="assets/js/lib/lrz.mobile.min.js"></script>
+		<script src="assets/js/setting.js"></script>
+	</body>
+</html>

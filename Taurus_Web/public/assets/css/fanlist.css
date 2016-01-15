@@ -1,0 +1,109 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+html,body{
+	width: 100%;
+	font-family:"黑体",arial;
+	background-color: #F7F7F7;
+}
+.clear{
+	clear: both;
+}
+.chose 
+{
+	width: 100%;
+	list-style: none;
+    background-color: #fff;
+	height: 40px;
+	display: table;
+	margin-bottom: 10px;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	overflow: hidden;
+}
+.chose  > li
+{  
+	font-size:15px;
+	width:50%;
+	height: 40px;
+	text-align: center;
+	color: #666666;
+	display: table-cell;
+	vertical-align: middle;
+	font-family:"黑体",arial;
+}
+.bkGcolor{
+	background-color: #4155B4;
+	color: #fff !important;
+}
+.content{
+	width: 100%;
+	padding-top: 50px;
+	overflow: scroll;
+/*	height: 100%;*/
+}
+.fans-item{
+	width: 100%;
+	background-color: #FFFFFF;
+	height: 50px;
+	font-family:"黑体",arial;
+	border-top:1px solid #EAEAEA;
+	position: relative;
+}
+#userPic{
+	width: 10%;
+	margin-left: 15px;
+	vertical-align: middle;
+	margin-top: 5px;
+	display: inline-block;
+	float: left;
+	width: 40px;
+	height: 40px;
+}
+.inFor{
+	display: inline-block;
+	float: left;
+	padding-top: 7px;
+	padding-left: 10px;
+}
+#username{
+	font-size:14px;
+	color: #666666;
+	font-family:"黑体",arial;
+}
+#userid{
+	font-size:11px;
+	color: #999999;
+	font-family:"黑体",arial;
+}
+.hidden{
+	display: none;
+}
+.focus,.focused{
+	width: 70px;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+.vLabel{
+	width: 16px;
+    height: 16px;
+    background: url(../image/common/icon-v.png) no-repeat center center;
+    background-size: cover;
+	display: inline-block;
+	/*position: absolute;
+	top: 10px;*/
+}
+.addHide{
+	display: none !important;
+}
+#username{
+	max-width: 180px;
+	height: 18px;
+	overflow: hidden;
+	display: block;
+}

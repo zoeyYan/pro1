@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="format-detection" content="telephone=no" />	
+		<title>荐股记录</title>
+		<link rel="stylesheet" href="assets/css/lib/base.css">
+		<link rel="stylesheet" href="assets/css/recommend.css">
+		<link rel="stylesheet" href="assets/css/lib/serstock.css">
+		<link rel="stylesheet" href="assets/css/sweet-alert.css">	
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>     
+        <script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+        <script src="assets/js/lib/net.js"></script>
+	</head>
+	<body>
+		<div class="nullrecommand hidden">
+			<p>很抱歉!我还没有推荐哦!</p>
+			<div class="copyright">由全天互动团队提供技术支持</div>
+		</div>
+		<article class="reShow">
+			<section class="recommandStock hidden">
+				<header class="input">
+					<span class="tipsInfo">股票名称/代码</span>
+					<input type="text" class="inputArea" placeholder="点击输入股票名称/代码">				
+				</header>
+				<div class="button recommand">我要推荐</div>
+				<p class="tips">注:股票开市期间，下午3:30至次日9:15可推荐股票。节假日股票闭市期间，推荐无效。</p>
+				<div class="copyright">由全天互动团队提供技术支持</div>
+			</section>
+			<section class="hidden showStock">
+				<header class="show">
+					<p>今日推荐</p>
+					<p id="stockName"></p>
+					<p id="stockNum"></p>
+			    </header>
+			<div class="button modify">立即修改</div>
+			<p class="tips">注:&nbsp;&nbsp;股票今日收益的计算方式为（今日收盘价－今日开盘价）/今日开盘价 。股票开市期间，下午3:30至次日9:15可推荐股票。节假日股票闭市期间，推荐无效。
+			</p>
+			<div class="copyright">由全天互动团队提供技术支持</div>
+		    </section>
+		</article>
+		<article class="serStock hidden">
+			<div class="searchHead clearfix">
+				<span>
+                <input type="text" class="searchTxt" placeholder="请输入"/>
+            	</span>
+            	<i class="close">取消</i>       		 
+			</div>
+			<div class="serContent" data-page="0" data-size = "20"  data-isfor="false">
+					
+			</div>
+			<script type="template" id="stock-item">
+					{{#each this}}
+						<div class="serStockItem">
+							 <p class="sertName">{{stockName}}</p>
+							 <p class="sertNum">{{id}}</p>
+						</div>
+					{{/each}}	
+				</script>	
+			
+		</article>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_shareRecommend.js"></script>
+		<script src="assets/js/serstock.js"></script>
+		<script src="assets/js/recommnd.js"></script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	background-color: #f7f7f7;
+}
+.cirContent{
+	width: 100%;
+	padding: 10px 10px 15px 10px;
+	background-color: #fff;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.cirContent>ul li{
+	float: left;
+	padding: 5px;
+	border: 1px solid #4055b3;
+	border-radius:2px ;
+	margin-left: 5px;
+	color: #4055b3;
+	margin-top: 5px;
+}
+.nothing{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.nothingLabel{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+}
+.nothingNote{
+	margin-top: 20px;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	color: #ccc;
+}
+.copyright{
+	color:#999999;
+	font-size: 10px;
+	text-align: center;
+	/*background-color: #f7f7f7;*/
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	position: absolute;
+	bottom: 0;
+}

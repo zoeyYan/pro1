@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="format-detection" content="telephone=no" />
+    	<link rel="stylesheet" href="assets/css/lib/base.css">
+    	<link rel="stylesheet" href="assets/css/lib/floatnav.css">		
+    	<link rel="stylesheet" href="assets/css/lib/menu.css">
+    	<link rel="stylesheet" href="assets/css/lib/swiper.css">
+    	<link rel="stylesheet" href="assets/css/sweet-alert.css">	
+    	<link rel="stylesheet" href="assets/css/index.css">		
+		<title>股市天天向上</title>
+	</head>
+	<body>
+		<header class="">
+		 	<div class="swiper-container vibanner">
+				  <div class="swiper-wrapper addBanner">				  	
+				  	<script type="template" id="banner-item">
+					  		{{#each this}}
+					    <div class="swiper-slide" style="height: 200px;">
+	            			<a href="{{link}}"><div class="bannerImg" style="background-image: url({{url}});"></div></a>
+	         			    <div class="bannerFoot">{{words}}</div>
+					    </div>
+	         				 {{/each}}					 	
+			       </script>				   
+				  </div>
+				  <div class="swiper-pagination"></div>
+			</div> 
+       </header>      			 
+	        <section>
+	        	<div class="banner clearfix">
+	        		<div class="bannerDetail"><a href="order.html"><img src="assets/image/index/banner-ylh-home.jpg"></a></div>
+	        		<div class="bannerDetail right"><a href="recommend.html"><img src="assets/image/index/banner-wyjg-home.jpg"></a></div>
+	        	</div>
+	        	<div class="clear"></div>
+	        </section>       
+	        
+	         <section>
+	        	<div class="banner clearfix">
+	        		<div class="bannerDetail  prefer"><img src="assets/image/index/video-demo1.jpg"></div>
+	        		<div class="bannerDetail right"><a href="video.html"><img src="assets/image/index/video-2.jpg"></a></div>
+	        	</div>
+	        	<div class="clear"></div>
+	        </section> 
+		<div class="title">
+				<div class="titleBoder">
+					<p>12位操盘手</p>					
+				</div>
+		</div>		
+		<div class="content clearfix">
+			<script type="template" id="player-item">
+				{{#each this}}
+					<div class="item" id={{id.accountId}} showMore={{idiograph}}>
+						<img src="{{head_image}}">
+						<p class="name">{{name}}</p><span class="vLabel hidden" is_verified={{is_verified}}></span>
+						<p>{{career}}</p>
+					</div>
+				{{/each}}
+			 </script>			
+			   <div class="clear"></div>
+		</div>	
+		<div class="copyright">由全天互动团队提供技术支持</div>
+		<div class="space"></div>
+		<div class="menu">
+			<div class="menuBtn">
+				 <p>股市策略</p>
+				 <ul class="nav">
+				 	<li><a href="index.html">节目主页</a></li>
+				 	<li><a href="hot.html">热门策略</a></li>
+				 	<li><a href="ask.html">热门活动</a></li>
+				 </ul>
+			</div>
+			<div class="menuBtn">
+				 <p>元老汇</p>
+				 <ul class="nav">
+				 	<li><a href="order.html">元老级</a></li>
+				 	<li><a href="ordercommon.html">平民级</a></li>
+				 </ul>
+			</div>
+			<div class="menuBtn">
+				<p>天天社区</p>
+				 <ul class="nav">
+				 	<li><a href="bbs.html">天天社区</a></li>
+				 	<li><a href="myself.html">个人主页</li>
+				 	<li><a href="apply.html">报名直通车</li>	
+				 </ul>
+			</div>
+		</div>
+		<div class="fcwm-mask"></div>
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>		
+		<script src="assets/js/lib/blooming-menu.min.js"></script>
+		<script src="assets/js/lib/sweet-alert.min.js"></script>
+		<script src="assets/js/lib/floatnav.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="assets/js/lib/weixin_share.js"></script>
+		<script src="assets/js/lib/swiper.jquery.min.js"></script>
+		<script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+		<script src="assets/js/lib/menu.js"></script>
+		<script src="assets/js/index.js"></script>
+	</body>
+</html>
