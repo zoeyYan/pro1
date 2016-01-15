@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1, user-scalable=no ">
+	    <meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="assets/css/lib/base.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/chat.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/lib/swiper.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/sweet-alert.css">
+		<script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="assets/js/sweet-alert.min.js"></script>
+		<title>聊天室</title>
+	</head>
+	<body>
+   <img style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" /> 
+	  <div class="fixed-top">
+  		<div class="header" id="header">
+  		  <script type="template" id="header-tmp">
+          <div class="header-cover-mark"> </div>
+          <img id="blurImg" class="header-cover"  src="{{#if head_imgbase64}}data:image/jpg;base64,{{head_imgbase64}}{{else}}assets/images/member/default-user.jpg{{/if}}" />
+          <i class="head-portrait" style="background-image:url({{#if head_image}}{{head_image}}{{else}}assets/images/member/default-user-m.jpg{{/if}})"> </i>
+          <p class="head-border"></p>
+          <div class="metadata">
+              <p class="p-name hide-title" label="{{is_verified}}">{{name}}<img src="assets/images/member/icon-v.png" class="label hidden"></p>
+              <div class="p-code">
+                  <p>ID:{{search_id}}</p>
+              </div>
+              <p class="p-status" id="status">离线</p>
+          </div>
+        </script>
+      </div>
+      <!-- tab  -->
+      <ul class="tab clear">
+          <li class="active" data-panel="chat">聊天室</li>
+          <li class="">在线人数(<span id="eId">0</span>人)</li>
+          <li class="">送礼物</li>
+      </ul>
+	  </div>
+	  <p class="chatinfo" id="chatinfo"></p>  
+	  <script id="record-chat" type="template">
+        {{#compare kind '==' 'join'}}
+          <span class="in-home"><span class="{{#if isMe}}me{{else}}{{#if isOwners}}master{{else}}other{{/if}}{{/if}}">{{user}}</span> 进入房间</span>  
+        {{/compare}}
+        {{#compare kind '==' 'quit'}}
+          <span class="out-home"><span class="{{#if isMe}}me{{else}}{{#if isOwners}}master{{else}}other{{/if}}{{/if}}">{{user}}</span> 退出房间</span>  
+        {{/compare}}
+        {{#compare kind '==' 'present'}}
+          <span class="context">{{message}}</span>
+        {{/compare}}
+      </script>
+      
+      
+    <!--dm start-->
+    <div id="dm_btn">弹</div>
+    <div class="dm">
+    <!--d_screen start-->
+        <div class="d_screen">
+            <div class="d_del">+</div>
+            <div class="d_mask"></div>
+            <div class="d_show"></div>
+        </div>
+    </div>
+    <!--end dm--> 
+    
+    <div class="content panel">
+      <div class="chat-box">
+         
+        <dl class="record dl-horizontal" id="record">
+              <dt class="time"> </dt>
+              <dd class="msg"> 
+                <!-- oneself -->
+                <span class="msg-activeinfo">立即上传头像填写完整信息，有机会进榜单哦！加V的是嘉宾哦！</span>  
+              </dd>
+              <script id="record-tmp" type="template">
+                {{#compare kind '==' 'talk'}}
+                  <dt class="time">
+                    {{time}}
+                  </dt>
+                  <dd class="msg"> 
+                    <!-- oneself -->
+                    {{#if userId}}
+                      <span class="{{#if isMe}}me{{else}}{{#if isOwners}}master{{else}}other{{/if}}{{/if}}" data-id="{{userId}}" data-name="{{user}}">{{#if isMe}}我{{else}}{{user}}{{/if}}</span>
+                    {{/if}}
+                    {{#if toUser}}
+                      <span>对</span>  
+                      <span class="{{#if toIsMe}}me{{else}}{{#if toIsOwners}}master{{else}}other{{/if}}{{/if}}" data-id="{{toUserId}}" data-name="{{toUser}}">{{#if toIsMe}}我{{else}}{{toUser}}{{/if}}</span>  
+                    {{/if}}
+                    <span>说：</span>
+                    <span class="context">{{message}}</span>
+                  </dd>
+                {{/compare}}
+              </script>
+          </dl>
+      </div>
+    <div class="fans" id="fans">
+		<ul id="fans-item" data-page="0" data-size="10" data-isfor="false">
+		</ul>
+		<div class="addlist">加载更多</div>
+		<script type="template" id="fans-tmp">
+		    {{#each this}}
+		        <li class="fans-item">
+					<section class="info" data-id="{{id.accountId}}"><img class="avatar" src="{{#if head_imgbase64}}data:image/jpg;base64,{{head_imgbase64}}{{else}}assets/images/member/default-user-m.jpg{{/if}}"></span><i class="name">{{name}}</i><em></em></section>
+					<section class="fun">
+						<ul>
+							<li class="item interest" data-id="{{id.accountId}}">关注</li>
+							<li class="item uninterest" data-id="{{id.accountId}}">已关注</li>
+							<li class="item page"><a class="link" href="member.html?id={{id.accountId}}">主页</a></li>
+						</ul>
+					</section>
+				</li>
+		    {{/each}}
+    	</script>
+	  </div>
+	  <div class="gift">
+	  	<!-- Swiper -->
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide">
+			  	  <ul class="gift-list clearfix" id="gift-list">
+			  	  	<!--<div style="width: 100%; height: 25px;opacity: 0;"></div>-->
+		    		<!--<li class="gift-item">		    			
+		    			<div class="gift-class"></div>
+		    			<div class="gift-info" data-giftid="1">
+		    				<p class="gift-name">玫瑰花</p>
+		    				<span class="freenum-back"></span>
+		    				<canvas id="canvas" width="20" height="20"></canvas>
+		    				<span class="freenum">0</span>
+		    				<i class='select'></i>
+		    				<p class="gift-cost">免费</p>
+		    			</div>
+		    		</li>-->
+		    		<script type="template" id="gift-tmp">
+		    		    {{#each this}}
+    		    			<li class="gift-item">                     
+                                <div class="gift-class" style="background-image: url({{gift_image}});"></div>
+                                <div class="gift-info" data-giftid="{{id}}">
+                                    <p class="gift-name">{{gift_name}}</p>
+                                    <span class="freenum-back"></span>
+                                    <canvas id="canvas" width="20" height="20"></canvas>
+                                    <span class="freenum">0</span>
+                                    <i class='select'></i>
+                                    <p class="gift-cost">免费</p>
+                                </div>
+                            </li>
+                        {{/each}}
+		    		</script>
+		    	  </ul>
+	            </div>
+	            <!--<div class="swiper-slide"></div>-->
+	        </div>
+	    </div>
+    	
+    	<div class="pay">
+    		<p class="money" style="display: none;">完美币：<span class="moneyinfo">0</span>个</p>
+    		<span class="foot" style="display: none;">充值</span>
+    		<span class="foot-2">赠送</span>
+    		<em class="give-btn" style="display: none;"></em>
+    		<i class="givenum">1</i>	
+    	</div>
+      </div>
+    </div>
+    <div class="action">
+      <span class="dialogue">@Ta</span>
+      <span class="home">个人主页</span>
+    </div>
+    <div class="gift-message" style="display: none;">
+		<ul class="info-list">
+			<li><span class="color1 give-num">1</span>今生唯一</li>
+			<li><span class="color give-num">11</span>一心一意</li>
+			<li><span class="color give-num">66</span>顺顺利利</li>
+			<li><span class="color give-num">99</span>长长久久</li>
+			<li><span class="color2 give-num">520</span>我爱你</li>
+			<li class="other">
+				<span class="otherinfo">其他数字</span>
+				<input type="tel" class="othernum"  placeholder="请输入" value=""/>
+			</li>	
+		</ul>
+		<div class="s"></div>
+	</div>
+    <footer class="in-box">
+        <div class="fansbtn">
+          <button class="startdraw">点击抽取粉丝</button>
+          <button class="startgrey">点击抽取粉丝</button>
+          <button class="draw">我要发言</button>
+          <div class="btn-mask"></div>
+          <button class="wait">等男神翻牌</button>
+          <div class="btn-mask1"></div>            
+        </div>
+      <textarea class="inText" name="inText" value="" id="inText" placeholder="对大家说（30字范围内哦！）："></textarea>
+      <span class="send-btn" id="send">发送</span>
+    </footer>
+    <!-- 引入js lib -->
+    <script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/handlebars-v3.0.3.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.mobile-events.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+    <script type="text/javascript" src="assets/js/lib/net.js"></script>
+    <!-- 本页页面js -->
+    <script src="assets/js/chat.js"></script>
+  </body>
+</html>

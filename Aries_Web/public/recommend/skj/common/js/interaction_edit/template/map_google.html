@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>地图</title>
+    <style type="text/css">
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    </style>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?sensor=true&language=zh-CN">
+    <script>
+      function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+      var init = function() {
+        var nb = getParameterByName('nb'),
+          mb = getParameterByName('mb'),
+          nc = getParameterByName('nc'),
+          mc = getParameterByName('mc'),
+          zoom = getParameterByName('zoom'),
+          label = getParameterByName('label').trim();
+        nb = Number(nb)?Number(nb):121.39979660511018;
+        mb = Number(mb)?Number(mb):31.206074968092846;
+        nc = Number(nc)?Number(nc):121.39979660511018;
+        mc = Number(mc)?Number(mc):31.206074968092846;
+        zoom = Number(zoom)?Number(zoom):13;
+
+        var map_center = new google.maps.LatLng(mb, nb),
+          marker_center = new google.maps.LatLng(mc, nc);
+        var map = new google.maps.Map(document.getElementById('container'),{
+          center: map_center,
+          zoom: zoom
+        });
+        var marker = new google.maps.Marker({
+          position: marker_center,
+          draggable: true,
+          map: map
+        });
+        var infoLabel = new google.maps.Label({
+          map: map,
+          style: {borderColor:"red"}
+        });
+        infoLabel.setContent(label);
+        infoLabel.setPosition(marker_center);
+        google.maps.event.addListener(marker, 'dragend', function(){
+          var marker_center = marker.getPosition();
+          infoLabel.setPosition(marker_center);
+        });
+
+        function handle(){
+          var map_center = map.getCenter(),
+            marker_center = marker.getPosition(),
+            zoom = map.getZoom();
+          if(window.parent.MapHandle) {
+            window.parent.MapHandle(map_center, marker_center, zoom);
+          }
+        }
+        google.maps.event.addListener(map, 'zoom_changed', handle);
+        google.maps.event.addListener(map, 'dragend', handle);
+        google.maps.event.addListener(marker, 'dragend', handle);
+      };
+    </script>
+  </head>
+  <body onload="init()" style="height: 100%;">
+    <div style="width:100%;height:100%" id="container"></div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/actDetail.css">
+
+    <title>秀活动</title>
+  </head>
+  <body style="display:none;">
+    <img style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" />
+    <div class="banner">
+       <div class="img-pic-default">
+         <img src="assets/images/actDetail/default_01.jpg">
+       </div>
+       <div class="img-pic-real" style="background-image:url('');"> </div>
+    </div>
+    <div class="state">
+      <i class="ico-state"> </i>
+      <p class="s-text"> </p>
+    </div>
+	  <div class="container" style="padding-bottom: 0;">
+       <div class="row clear" id="content">
+
+       </div>
+    </div>
+    <script type="template"id="content-tmp">
+       {{#choiceList}}
+	      <div class="item">
+	          <div class="img-thumb">
+	              <div class="img-pic-default">
+	                <img src="assets/images/actDetail/default_02.jpg">
+	              </div>
+	              {{#compare type "==" '1'}}
+	                <div class="img-pic-real youkuplayer" id="youkuplayer{{addOne @index}}" style="width: 100%;height: 100%" data-vid = {{choice}}>
+	                  <iframe height=100% width=100% src="{{choice}}" frameborder=0 allowfullscreen></iframe>
+	                </div>
+                  {{/compare}}
+	              {{#compare type "==" '0'}}
+                    <div class="img-pic-real" style="background-image:url('{{choice}}');"></div>
+                  {{/compare}}
+	          </div>
+	          <div class="img-metadata">
+	            <div class="img-title hide-title">{{description}}</div>
+	            <div class="img-vote">
+	              <input type="checkbox" id="checkbox-{{id}}" value="{{id}}">
+	              <label for="checkbox-{{id}}">投票</label>
+	            </div>
+	          </div>
+	      </div>
+       {{/choiceList}}
+    </script>
+
+    <div>
+      <a class="btn submit-btn" type="button" style="display: none" href="#">提交</a>
+      <a class="btn btn-disabled pre-btn"  type="button" style="display: none" href="javascript:;">尚未开始</a>
+      <a class="btn btn-disabled end-btn"  type="button" style="display: none" href="javascript:;">投票结束</a>
+      <a class="btn btn-disabled voted-btn"  type="button" style="display: none" href="javascript:;">已投票</a>
+    </div>
+
+    <!-- 底部按钮 -->
+      <footer class="nav-bar" >
+	     <div class="nav-btn">
+	       <!--<a href="activity.html"> </a>-->
+	       <p>粉丝站</p>
+	       <ul class="menu">
+          <li>
+            <a href="family.html" class="secondColor">美美部落</a>
+          </li>
+          <li>
+            <a href="selfdetail.html" class="secondColor">红人推荐</a>
+          </li>
+        </ul>
+	     </div>
+	     <div class="nav-btn">
+	     	<p>PK榜</p>
+          <ul class="menu">
+            <li><a href="index.html" class="secondColor" id="guestShow">每期嘉宾</a></li>
+            <li><a href="topboard.html" class="secondColor">排行榜</a></li>
+            <li><a href="activity.html" class="secondColor">秀活动</a></li>
+        </ul>
+        </div>
+        <div class="nav-btn" style="border: none;">
+        	<p>我</p>
+          <ul class="menu">
+            <li><a href="apply.html" class="secondColor">报名直通车</a></li>
+            <li><a href="member.html" class="secondColor">我的空间</a></li>
+          </ul>
+        </div>
+    </footer>
+    <div class="fcwm-mask"> </div>
+     <!-- 引入js lib -->
+    <script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+    <!-- youku播放器 -->
+    <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+
+    <script type="text/javascript" src="assets/js/lib/handlebars-v2.0.0.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.mobile-events.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+    <script type="text/javascript" src="assets/js/lib/net.js"></script>
+    <script type="text/javascript" src="assets/js/actDetail.js" ></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+body
+{
+	background-color:#0e2947 ;
+}
+
+.line img
+{
+	width: 100%;
+	margin-bottom: 25px;
+}
+.words
+{
+	width: 100%;
+	margin-bottom: 50px;
+}
+.words span
+{
+	color: #0d2848;
+}
+#list
+{
+	width: 88%;
+	color: #fff000;
+	font-family: "黑体";
+	line-height: 22px;
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 30px;
+}
+.remark
+{
+	text-align: center;
+	font-family: "黑体";
+	color: #fff000;
+	margin-bottom: 20px;
+}
+.choice
+{
+	width: 33.33%;
+	text-align: center;
+	color: #FFF000;
+	float: left;
+	line-height: 23px;
+}
+
+.colorOne
+{
+	background: #dcebf7;
+	width: 70%;
+	height: 28px;
+	margin: 0 auto;
+	text-align: center;
+	
+}
+.choice1
+{
+	width: 33.33%;
+	text-align: center;
+	color: #0e2947;
+	float: left;
+	line-height: 28px;
+}
+.choice1 a
+{
+	color: #0e2947;
+}
+.colortwo
+{
+	color: #FFF000;
+	background: #1f4e78;
+	width: 70%;
+	height: 28px;
+	line-height: 28px;
+	margin: 0 auto;
+	text-align: center;
+}
+.choice2
+{
+	width: 33.33%;
+	text-align: center;
+	color: #FFFFFF;
+	float: left;
+	line-height: 28px;
+}
+.choice2 a
+{
+	color: #FFFFFF;
+}
+.font
+{
+	font-size: 12px;
+}
+.color
+{
+	color: #FFFFFF;
+}

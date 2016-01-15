@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="assets/css/lib/base.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/topboard.css">
+		<title>排行榜</title>
+	</head>
+	<body style="background-color: #FFFFFF;">
+	    <div class="search-top clearfix">
+            <span>
+                <input type="text" class="search-txt" placeholder="请输入"/>
+            </span>
+            <i class="close">取消</i>
+        </div>
+        <div class="contentlist">
+            <p class="search-num"></p>
+            <div class="search-list clearfix" id="search-list" data-page="0" data-size="12" data-isfor="false">
+
+            </div>
+             <script type="template" id="list-tmp">
+                {{#each this}}
+                <div class="list-item-s">
+                    <div class="imglist">
+                        <div class="img-default">
+                            <img src="assets/images/topboard/default_01.png"/>
+                        </div>
+                        <div class="img-real" style="background-image:url('{{head_image}}');"></div>
+                        <span class="mask"></span>
+                        <a class="img-link" href="member.html?id={{id.accountId}}"></a>
+                    </div>
+                    <div class="info">
+                        <div class="infoPart-s">
+                            <p class="name" label={{is_verified}}>{{name}}<img src="assets/images/member/icon-v.png" class="label1 hidden"></p>
+                            <div class="id">
+                                <i>ID:</i>
+                                <span class="id-num">{{search_id}}</span>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                {{/each}}
+            </script>
+        </div>
+		<header>
+			<ul class="clearfix">
+				<li class="cur"><em>日榜</em></li>
+				<li><em>周榜</em></li>
+				<li><em>月榜</em></li>
+			</ul>
+		</header>
+		<nav>
+			<ul>
+				<li class="cur"><i>男神榜</i></li>
+				<li><i>女神榜</i></li>
+				<li><i>粉丝榜</i></li>
+				<li><i>新人榜</i></li>
+			</ul>
+		</nav>
+		<div class="content">
+            <div class="toplist day clearfix" data-action="getDayMan" id="daymanList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist day clearfix" data-action="getDayWoman" id="daywoList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist day clearfix" data-action="getDayRich" id="dayrichList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist day clearfix" data-action="getDayNew" id="daynewList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist week clearfix" data-action="getWeekMan" id="weekmanList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist week clearfix" data-action="getWeekWoman" id="weekwoList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist week clearfix" data-action="getWeekRich" id="weekrichList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist week clearfix" data-action="getWeekNew" id="weeknewList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist month clearfix" data-action="getMonthMan" id="monthmanList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist month clearfix" data-action="getMonthWoman" id="monthwoList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist month clearfix" data-action="getMonthRich" id="monthrichList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="toplist month clearfix" data-action="getMonthNew" id="monthnewList" data-page="0" data-size="20" data-isfor="false">
+
+            </div>
+            <div class="bottom">
+            </div>
+		</div>
+		<script type="template" id="item-tmp">
+            {{#each this}}
+            <div class="list-item">
+                <div class="imglist">
+                    <div class="img-default">
+                        <img src="assets/images/topboard/default_01.png"/>
+                    </div>
+                    <div class="img-real" style="background-image:url('{{head_image}}');"></div>
+                    <div class="top tag"></div>
+                    <span class="mask"></span>
+                    <p class="charm itag">{{sum_charm}}</p>
+                    <a class="img-link" href="member.html?id={{account_id}}"></a>
+                </div>
+                <div class="info">
+                	<div class="infoPart">
+	                    <p class="name" label={{isVerified}}>{{name}}<img src="assets/images/member/icon-v.png" class="label hidden"></p>
+	                    <div class="id">
+	                        <i>ID:</i>
+	                        <span class="id-num">{{search_id}}</span>
+	                    </div>
+                   </div>
+                    <div class="infoPart infoRight" accoutId="{{account_id}}">
+                    	<a href="chat.html?id={{account_id}}&status=0"><img src="assets/images/share/btn-sendgifts-s.png"></a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+
+        <script type="template" id="item-money-tmp">
+            {{#each this}}
+            <div class="list-item" id="{{addOne @index}}">
+                <div class="imglist">
+                    <div class="img-default">
+                        <img src="assets/images/topboard/default_01.png"/>
+                    </div>
+                    <div class="img-real" style="background-image:url('{{head_image}}');"></div>
+                    <div class="top tag"></div>
+                    <span class="mask"></span>
+                    <p class="money itag">{{sum_charm}}</p>
+                    <a class="img-link" href="member.html?id={{account_id}}"></a>
+                </div>
+                <div class="info">
+                    <p class="name">{{name}}</p>
+                    <div class="id">
+                        <i>ID:</i>
+                        <span class="id-num">{{search_id}}</span>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+
+        <div class="fcwm-mask"> </div>
+	<!-- 底部按钮 -->
+	   <footer class="nav-bar" >
+	     <div class="nav-btn">
+	       <p>粉丝站</p>
+	       <ul class="menu">
+          <li>
+            <a href="family.html" class="secondColor">美美部落</a>
+          </li>
+          <li>
+            <a href="selfdetail.html" class="secondColor">红人推荐</a>
+          </li>
+        </ul>
+	     </div>
+	     <div class="nav-btn">
+	     	<p>PK榜</p>
+          <ul class="menu">
+            <li><a href="index.html" class="secondColor">每期嘉宾</a></li>
+            <li><a href="topboard.html" class="secondColor">排行榜</a></li>
+            <li><a href="activity.html" class="secondColor">秀活动</a></li>
+        </ul>
+        </div>
+        <div class="nav-btn" style="border: none;">
+        	<p>我</p>
+          <ul class="menu">
+	       	<li><a href="apply.html" class="secondColor">报名直通车</a></li>
+            <li><a href="member.html" class="secondColor">我的空间</a></li>
+          </ul>
+         </div>
+    </footer>
+	<!-- 引入js lib -->
+    <script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/handlebars-v2.0.0.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.mobile-events.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+    <script type="text/javascript" src="assets/js/lib/net.js"></script>
+	<script type="text/javascript" src="assets/js/topboard.js" ></script>
+	</body>
+</html>

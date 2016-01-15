@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1, user-scalable=no ">
+        <meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="assets/css/sweet-alert.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/mytheme.css">
+        <script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="assets/js/lib/lrz.mobile.min.js"></script>
+        <script type="text/javascript" src="assets/js/lib/handlebars-v3.0.3.js"></script>
+        <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+        <script type="text/javascript" src="assets/js/lib/net.js"></script>
+        <script type="text/javascript" src="assets/js/sweet-alert.min.js"></script>
+        <script type="text/javascript" src="assets/js/mytheme.js"></script>
+        <title></title>
+    </head>
+    <body>
+        <img style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" /> 
+        <div class="art-container" data-page="0" data-size="18" data-isfor="false"></div>   
+        <script type="template" id="art-tmp">
+        	{{#each this}}
+                <section class="art-item clearfix" data-id="{{article_id}}">
+                    <span class="artcon">
+                    	<p class="a-title">{{article_name}}</p>
+                        <i class="new {{is_new_comments}}"></i>
+                    </span>
+                    <span class="a-del"></span>
+                </section>
+            {{/each}}
+        </script>
+        <script type="template" id="save-tmp">
+            {{#each this}}
+                <section class="art-item clearfix" data-id="{{article_id}}">
+                    <span class="artcon">
+                        <p class="a-title">{{article_name}}</p>
+                    </span>
+                    <span class="a-del"></span>
+                </section>
+            {{/each}}
+        </script>
+        <div class="back">
+            <p>还没有任何贴子哦，赶快去加入圈子，开始发贴吧。</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+html{
+	font-family:  "黑体",arial;
+}
+body {
+  background-color: #f7f7f7;
+}
+.banner {
+	position: relative;
+}
+
+.state {
+  position: relative;
+  margin: 1rem;
+  padding: 1rem;
+  min-width: 300px;
+  border: 0.1rem solid #eaeaea;
+  background-color: #fff;
+  min-height: 6.5rem;
+  padding-left: 6.5rem;
+}
+.ico-state {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	width: 4.5rem;
+	height: 4.5rem;
+	background: url(../images/actDetail/icon-rule.png) no-repeat center center;
+	background-size: 100%;
+}
+.s-text{
+  font-size: 1rem;
+  line-height: 1.42;
+}
+.row {
+	margin-left: -1rem;
+}
+.item {
+  width: 50%;
+  padding-left: 1rem;
+  padding-bottom: 3rem;
+  float: left;
+}
+.item-3 {
+    width: 33.3333%;
+}
+a {
+	text-decoration: none;
+}
+.img-metadata {
+  color: #666;
+  font-size: 1.2rem;
+  margin-top: .8rem;
+}
+.img-vote {
+	text-align: center;
+  margin-top: 1rem;
+}
+
+.img-vote input {
+	vertical-align: middle;
+}
+.btn {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  margin: 2.5rem 5% 8rem;
+  background-color: #ff4090;
+  text-align: center;
+  border-radius: 5px;
+}
+.btn-disabled {
+	background-color: #ccc;
+}

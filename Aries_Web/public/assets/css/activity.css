@@ -1,0 +1,97 @@
+.ico-tag {
+	display: inline-block;
+	width: 8rem;
+	height: 2rem;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+  top: 1rem;
+  right: 0;
+  z-index: 999;
+}
+a {
+	text-decoration: none;
+}
+.ico-tag.processing {
+	background-image: url(../images/activity/tag-processing.png);
+}
+.ico-tag.comingsoon {
+	background-image: url(../images/activity/tag-comingsoon.png);
+	
+}
+.ico-tag.end {
+	background-image: url(../images/activity/tag-end.png);
+}
+
+.cover-box{
+	list-style: none;
+}
+.cover-box li {
+	margin-bottom: 1rem;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+.masking,.link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.masking {
+  z-index: 997;
+  background-color: rgba(0,0,0,0.7);
+}
+.link {
+	z-index: 998;
+}
+.time{
+	position: absolute;
+	top: 40%;
+	color: #FFFFFF;
+	z-index: 999;
+	font-size: 1.8rem;
+	line-height: 1.8rem;
+	text-align: center;
+	width: 100%;
+}
+.days {
+	font-size: 2.5rem;
+	padding:0 5px 0 1px;
+	vertical-align: middle;
+}
+.detail{
+	background-image: url(../images/activity/sign-tri.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: auto 92%;
+	padding-left: 12px;
+	line-height: 1.3rem;
+	font-size: 1.3rem;
+	color: #FFFFFF;
+	z-index: 9999;
+	position: absolute;
+	top: 60%;
+	width: 92px;
+	margin-left: -46px;
+	left: 50%;
+}
+.actInfo{
+	display: inline-block;
+	float: right;
+	padding-right: 10px;
+	width: 76px;
+	height: 24px;
+	line-height: 22px;
+	padding-bottom: 2px;
+
+	font-size: 10px;
+	color: #FFFFFF;
+	text-align: right;
+	font-style: normal;
+}
+.surplus{
+	padding: 0 2px;
+	font-style: normal;
+}

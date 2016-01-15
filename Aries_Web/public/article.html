@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1, user-scalable=no ">
+        <meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="assets/css/article.css">
+        <script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+        <title></title>
+	</head>
+	<body>
+	    <img class="shareimg" style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" />
+	    <div class="container" data-page="0" data-size="50" data-isfor="false">
+	        <div class="article-con"></div>
+            <script type="template" id="article-tmp">
+                {{#each this}}
+                      <section class="article">
+                        <div class="info clearfix">
+                            <a class="authorlink" href="member.html?id={{user_id}}">
+                                <div class="author">
+                                    <div class="head-image" style="background-image: url({{author_image}});"></div>
+                                    <div>
+                                        <p class="name">{{author_name}}<i class="isv {{is_verified}}"></i></p>
+                                        <p class="time" data-time = "{{create_time}}">分钟前</p>
+                                    </div>
+                                    <div class="lz">楼主</div>
+                                </div>
+                            </a>
+                            <div data-id="{{article_id}}" class="fav"></div>
+                        </div>
+                        <div class="content">
+                            <a class="link" href="{{link}}"></a>
+                            <div class="top">
+                                <em class="good ttop {{is_top}}">顶</em>
+                                <em class="good {{is_elite}}">精</em>
+                                <span class="title">{{article_name}}</span>
+                            </div>
+                            <p class="txt">{{{content}}}</p>
+                            {{#compare image_number ">=" "1"}}
+                            <div class="image-view3 clearfix">
+                                <img src="{{image_url1}}" class="img-item {{#if image_url1}}{{else}}null{{/if}}">
+                                <img src="{{image_url2}}" class="img-item {{#if image_url2}}{{else}}null{{/if}}">
+                                <img src="{{image_url3}}" class="img-item {{#if image_url3}}{{else}}null{{/if}}">
+                                <img src="{{image_url4}}" class="img-item {{#if image_url4}}{{else}}null{{/if}}">
+                                <img src="{{image_url5}}" class="img-item {{#if image_url5}}{{else}}null{{/if}}">
+                                <img src="{{image_url6}}" class="img-item {{#if image_url6}}{{else}}null{{/if}}">
+                                <img src="{{image_url7}}" class="img-item {{#if image_url7}}{{else}}null{{/if}}">
+                                <img src="{{image_url8}}" class="img-item {{#if image_url8}}{{else}}null{{/if}}">
+                                <img src="{{image_url9}}" class="img-item {{#if image_url9}}{{else}}null{{/if}}">
+                            </div>
+                            {{/compare}}
+                        </div>
+                        <div class="relative clearfix">
+                            <div class="comment com1">{{#if comments_number}}评论(<i class="comnum">{{comments_number}}</i>){{else}}评论(<i class="comnum">0</i>){{/if}}</div>
+                        <div class="same unlike arunlike" data-id="{{article_id}}">{{#if thumbs_number2}}{{thumbs_number2}}{{else}}0{{/if}}</div>
+                        <div class="same like arlike" data-id="{{article_id}}">{{#if thumbs_number}}{{thumbs_number}}{{else}}0{{/if}}</div>
+                        </div>
+                    </section>
+                {{/each}}
+            </script>
+            <div class="comment-con">
+                <script type="template" id="comment-tmp">
+                {{#each this}}
+                	<div class="comment-item" data-id="{{comments}}">
+                        <div class="info clearfix">
+                            <div class="author">
+                                <a href="member.html?id={{user_id}}">
+                                    <div class="head-image" style="background-image: url({{author_image}});"></div>
+                                    <div>
+                                        <p class="name">{{author_name}}</p>
+                                        <p class="time" data-time = "{{create_time}}">分钟前</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <em class="index"></em>
+                        </div>
+                        <p class="com-con">{{{content}}}</p>
+                    </div>
+                    <div class="relative recom clearfix">
+                        <div class="comment com2com" data-name = "{{author_name}}" data-id = "{{comments}}">评论</div>
+                    <div class="same unlike comunlike" data-id="{{comments}}">{{#if thumbs_number2}}{{thumbs_number2}}{{else}}0{{/if}}</div>
+                    <div class="same like comlike" data-id="{{comments}}">{{#if thumbs_number}}{{thumbs_number}}{{else}}0{{/if}}</div>
+                    </div>
+                {{/each}}
+                </script>
+            </div>
+            <script type="template" id="com2-tmp">
+            {{#each this}}
+                <div class="com2 clearfix">
+                    <a class="com2au" href="member.html?id={{user_id}}">{{author_name}} :</a>
+                    <i class="com2con">{{{content}}}</i>
+                </div>
+            {{/each}}
+            </script>
+        </div>
+        <footer class="msg clearfix">
+            <div class="face"></div>
+            <input type="text" class="message" data-id='' placeholder="100字以内哦！" id="message"/>
+            <button class="send">评论</button>
+        </footer>
+             <div class="black">
+      <div class="spinner">
+        <div class="spinner-container container1">
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+          <div class="circle3"></div>
+          <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+          <div class="circle3"></div>
+          <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+          <div class="circle3"></div>
+          <div class="circle4"></div>
+        </div>
+      </div>
+      <p>正在评论...</p>
+    </div>
+    <script type="text/javascript" src="assets/js/lib/handlebars-v3.0.3.js"></script>
+    <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+    <script type="text/javascript" src="assets/js/lib/net.js"></script>
+    <script type="text/javascript" src="assets/js/article.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="assets/js/weixin_shareart.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.qqFace.js"></script>
+	</body>
+</html>

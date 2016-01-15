@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		 <link rel="stylesheet" type="text/css" href="assets/css/manage.css"/>
+		<script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+	    <div class="content">
+	        <input type="text" class="link" placeholder="输入链接格式为(孙克杰：JB_SKJ)"/>
+	        <button class="skip">创建嘉宾</button>
+	    </div>
+	    <div class="content">
+            <button class="addprogram">创建新一期节目</button>
+        </div>
+    <script type="text/javascript">
+    	$(".skip").on("click",function(){
+            var link = $(".link").val();
+            if(link==''){
+                alert("请输入嘉宾前缀")
+            }
+            else{
+                window.location.href="addman.html" + "?t=ol-" + link + Math.ceil(Math.random()*100000000);
+            }
+        });
+        $(".create").on("click",function(){
+            window.location.href="addprogram.html?t=admin";
+        });
+    </script>
+	</body>
+</html>

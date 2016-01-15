@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta content="telephone=no" name="format-detection" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>最美自拍女神</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/lib/base.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/sweet-alert.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/selfie.css"/>
+    <script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/sweet-alert-s.min.js"></script>
+	</head>
+	<body>
+	    <header>
+	        <img class="top-img" src="assets/images/selfie/bgtop.jpg"/>
+	    </header>
+	    <section class="top-info">
+	        <img class="top-title" src="assets/images/selfie/LOGO.png" />
+	    </section>
+	    <section class="award">
+	        <img class="award-img" src="assets/images/selfie/PHOTO.png"/>
+	        <img class="award-img2" src="assets/images/selfie/INFO.jpg"/>
+	    </section>
+	    <section class="content">
+	        <section class="search_div">
+	            <button class="join">我要报名</button>
+	        </section>
+	        <!--<section class="selfinfo">
+            </section>
+            <script type="template" id="me-tmp">
+                {{#each this}}
+                    <span class="toptips">个人信息</span>
+                    <div class="clearfix">
+                        <a class="head" href="selfin.html?userId={{account_id}}" style="background-image: url({{vote_img}});"></a>
+                        <div class="info">
+                            <p>姓名 : <i>{{vote_name}}</i></p>
+                            <p>编号 : <i>{{search_id}}</i></p>
+                            <p>排行 : <i></i></p>
+                            <p>票数 : <i class="total">{{vote_total}}</i></p>
+                        </div>
+                    </div>
+                {{/each}}
+            </script>-->
+	        <div class="board">
+	            <div class="search clearfix">
+	                <input class="search_txt" type="text" placeholder="搜名字或编号" />
+	                <button class="search_btn">搜索</button>
+	            </div>
+	            <span class="toptips">投票排行</span><span class="back hidden">返回</span>
+	            <div class="topboard clearfix">
+	            </div>
+	            <script type="template" id="vote-tmp">
+                    {{#each this}}
+                        <div class="item">
+                            <a class="item-img" href="selfin.html?userId={{account_id}}" style="background-image: url({{vote_img}});"></a>
+                            <p class="num">{{search_id}}号 </p>
+                            <div class="left">
+                                <p>{{vote_name}}</p>
+                                <p><i class="total">{{vote_total}}</i>票</p>
+                            </div>
+                            <button data-id="{{account_id}}" class="vote">投票</button>
+                        </div>
+                    {{/each}}
+                </script>
+	        </div>
+	        <div class="pagecon">
+	            <div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
+	        </div>
+	    </section>
+	    <section class="bottom">
+            <img src="assets/images/selfie/bgbottom.jpg" />
+        </section>
+	    <script type="text/javascript" src="assets/js/lib/handlebars-v2.0.0.js"></script>
+	    <script src="assets/js/lib/jquery.pagination.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+        <script type="text/javascript" src="assets/js/lib/net.js"></script>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+        <script src="assets/js/selfie.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

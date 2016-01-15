@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1, user-scalable=no ">
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+    <script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/handlebars-v3.0.3.js"></script>
+    <title class="head-title"></title>
+</head>
+<body>
+    <img style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" />
+    <header class="headerimg" data-isfor="false">
+        <div class="header-cover-mark"></div>
+        <img id="blurImg" class="header-cover"/>
+        <div class="head-portrait"></div>
+        <p class="head-border"></p>
+        <div class="homeinfo">
+            <p class="homename">&nbsp;</p>
+            <p class="tips"><!--人气&nbsp;2222&nbsp;&nbsp;话题&nbsp;2222-->&nbsp;</p>
+            <div class="nice">精华话题</div>
+        </div>
+        <div class="add"></div>
+    </header>
+
+    <div class="container" id="container" data-page="0" data-size="10" data-isfor="false"></div>
+        <script type="template" id="article-tmp">
+            {{#each this}}
+                  <section class="article">
+                    <div class="info clearfix">
+                        <a class="authorlink" href="member.html?id={{user_id}}">
+                            <div class="author">
+                                <div class="head-image" style="background-image: url({{author_image}});"></div>
+                                <div>
+                                    <p class="name">{{author_name}}<i class="isv {{is_verified}}"></i></p>
+                                    <p class="time" data-time = "{{create_time}}">分钟前</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content">
+                        <a class="link" href="article.html?articleid={{article_id}}"></a>
+                        <div class="top">
+                            <em class="good ttop {{is_top}}">顶</em>
+                            <em class="good {{is_elite}}">精</em>
+                            <span class="title">{{article_name}}</span>
+                        </div>
+                        <p class="txt">{{{content}}}</p>
+                        {{#compare image_number "==" "1"}}
+                        <div class="image-view1 clearfix">
+                            <img src="{{image_url1}}" class="img-item">
+                        </div>
+                        {{/compare}}
+                        {{#compare image_number ">=" "2"}}
+                        <div class="image-view3 clearfix">
+                            <img src="{{image_url1}}" class="img-item">
+                            <img src="{{image_url2}}" class="img-item">
+                            <img src="{{image_url3}}" class="img-item {{#if image_url3}}{{else}}null{{/if}}">
+                        </div>
+                        {{/compare}}
+                    </div>
+                    <div class="relative clearfix">
+                        <div class="comment">{{#if comments_number}}{{comments_number}}{{else}}0{{/if}}</div>
+                        <div class="same unlike" data-id="{{article_id}}">{{#if thumbs_number2}}{{thumbs_number2}}{{else}}0{{/if}}</div>
+                        <div class="same like" data-id="{{article_id}}">{{#if thumbs_number}}{{thumbs_number}}{{else}}0{{/if}}</div>
+                    </div>
+                </section>
+            {{/each}}
+        </script>
+
+    <footer class="newart">
+        <div class="new">我要发帖</div>
+    </footer>
+    <div class="footer-cover"></div>
+    <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+    <script type="text/javascript" src="assets/js/lib/net.js"></script>
+    <script type="text/javascript" src="assets/js/home.js"></script>
+    <script type="text/javascript" src="assets/js/scrollReveal.min.js"></script>
+</body>
+</html>

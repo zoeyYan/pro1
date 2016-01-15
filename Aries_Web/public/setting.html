@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="assets/css/setting.css">
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/lrz.mobile.min.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+        <script src="assets/js/setting.js"></script>
+		<title>非常完美</title>
+	</head>
+	<body style=" background:#f7f7f7;">
+	     <img style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" /> 
+      <header>
+      	<form id="form0" enctype="multipart/form-data">
+        <div class="head clearfix" id="head">
+          <img class="avatar" src="" alt="" id="test">
+          <span>
+            <p>我的头像</p>
+            <i>ID:<span id="userId"></span></i>
+          </span>
+          <a class="more" id="Icon">
+            <input type="file" accept="image/*;capture=camera" class="input transIcon" id="photo">
+          </a>              
+        </div>
+       </form>
+      </header>
+      <form id="form1" enctype="multipart/form-data">
+      <section class="name" style="border-top:1px solid #eaeaea;">
+         <div class="infoLeft">
+         	<em>姓名</em>
+         </div>
+         <div class="infoRight"> 
+         	    <p id="name" class=""></p>
+         		<input type="text" class="nametxt hidden"  placeholder="请输入" name="name" value=""/>
+         </div>
+         <div class="clear"></div>
+      </section>
+      
+      <section class="gender">
+      	  <div class="infoLeft">
+         	<em>性别</em>
+         </div>
+         <div class="infoRight"> 
+         	    <p id="gender"></p>
+         		  <div class="selectLoc hidden"> 
+			        	<select id="sec00" class="addSize" style="opacity: 0.2;">
+			        		<option value="2">请选择</option>
+			        		<option value="0">男</option>
+			        		<option value="1">女</option>
+			        	</select>
+    			  </div>
+         </div>
+         <div class="clear"></div>
+      </section>     
+      
+      <section class="age">
+      	<div class="infoLeft">
+         	<em>生日</em>
+         </div>
+        <div class="infoRight"> 
+         	    <p id="age"></p>
+
+         		<input type="date" style="opacity: 0.2;" class="agetxt hidden addSize modifyColor"  placeholder="请输入" name="age" value=""/>
+
+         </div>
+      </section>
+      <section class="constellation">
+      	  <div class="infoLeft">
+         	<em>星座</em>
+         </div>
+         <div class="infoRight"> 
+         	    <p id="constellation"></p>
+         		  <div class="selectLoc hidden"> 
+			        	<select id="sec01" class="addSize" style="opacity: 0.2;" >
+		        		<option value="0">请选择</option>
+		        		<option value="1">白羊座</option>
+		        		<option value="2">金牛座</option>
+		        		<option value="3">双子座</option>
+		        		<option value="4">巨蟹座</option>
+		        		<option value="5">狮子座</option>
+		        		<option value="6">处女座</option>
+		        		<option value="7">天秤座</option>
+		        		<option value="8">天蝎座</option>
+		        		<option value="9">射手座</option>
+		        		<option value="10">摩羯座</option>
+		        		<option value="11">水瓶座</option>
+		        		<option value="12">双鱼座</option>
+		        	</select>
+    			  </div>
+         </div>
+         <div class="clear"></div>      	
+      </section>
+      <section class="job">
+      	 <div class="infoLeft">
+         	<em>职业</em>
+         </div>
+        <div class="infoRight"> 
+         	    <p id="career"></p>
+         		<input type="text" class="jobtxt hidden"  placeholder="请输入" name="age" value=""/>
+         </div>
+         <div class="clear"></div>
+      </section>
+      <section class="country">
+      	 <div class="infoLeft">
+         	<em>地区</em>
+         </div>
+           <div class="infoRight"> 
+           	 <p id="nation"></p>
+	        	<div class="selectLoc">
+	        		 <input type="text" class="nationtxt hidden"  placeholder="请输入" name="nation" value=""/>
+				 </div>        
+          </div> 
+          <div class="clear"></div>
+      </section>
+      <section class="sign ">
+      	 <div class="infoLeft">
+         	<em>个性签名</em>
+         </div>
+        <div class="infoRight"> 
+         	    <p id="signtxt"></p>
+         		<input type="text" class="signtxt hidden"  placeholder="请输入" name="idiograph" value=""/>
+         </div>
+         <div class="clear"></div>  	
+      </section>
+      </form>
+      <div class="submitLoc">
+      	 <div class="subRight"><p>确认</p></div>
+      	 <div class="clear"></div>
+      </div>
+     <div class="black">
+	  <div class="spinner">
+	    <div class="spinner-container container1">
+	      <div class="circle1"></div>
+	      <div class="circle2"></div>
+	      <div class="circle3"></div>
+	      <div class="circle4"></div>
+	    </div>
+	    <div class="spinner-container container2">
+	      <div class="circle1"></div>
+	      <div class="circle2"></div>
+	      <div class="circle3"></div>
+	      <div class="circle4"></div>
+	    </div>
+	    <div class="spinner-container container3">
+	      <div class="circle1"></div>
+	      <div class="circle2"></div>
+	      <div class="circle3"></div>
+	      <div class="circle4"></div>
+	    </div>
+	  </div>
+	  <p>正在上传...</p>
+	</div>
+	</body>
+</html>

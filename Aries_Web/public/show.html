@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="assets/css/show.css"/>
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>		
+		<script src="assets/js/lib/handlebars-v2.0.0.js"></script>
+	    <script src="assets/js/lib/Area.js"></script>
+	    <script src="assets/js/lib/AreaData_min.js"></script>
+		<script src="assets/js/show.js"></script>
+		<title>秀活动</title>
+	</head>
+	<body>
+		<img style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" />
+		<div class="outBox">
+			<img id="left" src="assets/images/sHow/rose.png" />
+			<img id="right" src="assets/images/sHow/title.png" />
+			<div class="content">
+				<p class="time">活动时间：8月6日至8月10日</p>
+				<div class="feedback">
+					<div class="rose">
+						<img src="assets/images/sHow/sHow/rose.png" />
+					</div>
+					<div class="title">
+						<img src="assets/images/sHow/pt1.png" />
+					</div>
+					<div class="clear"></div>
+					<p>活动期间，粉丝向心仪的Top5中任意一名男嘉宾赠送鲜花满299朵，前50名粉丝即可获得该男嘉宾签名明信片一张，先到先得，赠完为止。</p>
+				</div>
+				<div class="feedback position">
+					<div class="siteR">
+						<img src="assets/images/sHow/sHow/rose.png" />
+					</div>
+					<div class="title">
+						<img src="assets/images/sHow/pt2.png" />
+					</div>
+					<p>手不够快？没关系，量多也有好礼。活动期间送出鲜花总数最多的粉丝，可获得特别回馈礼物：由不装品牌提供的不装任意贴夹克一件。</p>
+				</div>
+				<div class="imfor">马上填信息参与赢奖</div>
+				<img id="click" src="assets/images/sHow/att.png" />
+				<div class="guest" id="datainfo">							
+					<script type="template" id="data-second">
+		   	  			{{#data}}
+							<div class="MDcontent">
+								<p id="count">明信片还有</p>
+								<div class="number">
+									<span class="nameLoc">{{name}}</span>
+								<div class="cricle"><a href="chat.html?id={{id}}&status=0"><img src="{{head_picture}}"></a></div>
+								<div class="cricle2">
+									<p><span class="postcard">{{card}}</span>&nbsp;张</p>
+								</div>
+								<p class="count">你已经送了<span class="count2">{{number}}</span>朵</p>
+								</div>
+							</div>
+						 {{/data}}	
+					</script>					
+				</div>
+				<div class="null"></div>
+			</div>
+			
+			<div class="popBoder hidden">				
+				<div class="pop-up ">
+					<div class="closed"><img src="assets/images/sHow/btn-close.png"></div>
+					<div class="flower">
+						<img src="assets/images/sHow/avatar.png" />
+					</div>
+				<div class="message">
+					<div class="name"><input type="text" class="nameText" placeholder="您的姓名" id="name"></div>
+					<div class="border"></div>
+				</div>
+				<div class="message">
+					<div class="name"><input type="tel" class="nameText" placeholder="您的电话" maxlength="11" id="tel"></div>
+					<div class="border"></div>
+				</div>
+				<div class="message">
+					<div class="name"><input type="tel" class="nameText" placeholder="您的邮编" maxlength="11" id="password"></div>
+					<div class="border"></div>
+				</div>
+				<div class="message">					
+				  <div class="location">
+				  	  <div class="locatAdd">
+						<div class="fadeShow" id="province">省</div>
+						<div class="fadeShow" id="city">市</div>
+						<div class="fadeShow" id="area">区</div>
+					  </div>	
+				  </div>				  
+										
+						<select class="add add1" id="seachprov" name="seachprov" class="name" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
+					    <select class="add add2" id="seachcity" class="name" name="homecity" onChange="changeCity(this.value,'seachdistrict');"></select>
+					    <select class="add add3" id="seachdistrict" class="name" name="seachdistrict"></select>
+					<!--<select class="add add2" >
+						<option type="text" class="site"></option>
+						<option type="text" class="site">运城市</option>
+						<option type="text" class="site">武汉市</option>
+						<option type="text" class="site">西安市</option>
+					</select>
+					<select class="add add3" >
+						<option type="text" class="site"></option>
+						<option type="text" class="site">区0</option>
+						<option type="text" class="site">区1</option>
+						<option type="text" class="site">区2</option>
+					</select>-->
+					<div class="border bPosition">
+						<div class="bRight"></div>
+						<div class="bRight2"></div>
+					</div>
+				</div>
+				<div class="message">
+					<div class="name"><input type="text" class="nameText" placeholder="详细地址" id="areamore"></div>
+					<div class="border"></div>
+				</div>
+				<div class="send">提交</div>
+			</div>
+		 	</div>	
+		</div>
+		
+		<div class="backgrond hidden"></div>
+	</body>
+</html>

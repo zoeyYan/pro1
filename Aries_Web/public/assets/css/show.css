@@ -1,0 +1,386 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	text-decoration: none;
+    list-style: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: "黑体";
+	font-size: 14px;
+	word-break: break-all;
+	word-wrap: break-word;
+	background-image: url(../images/sHow/sHow/paper_bg.jpg);
+	width: 100%;
+}
+.clear
+{
+	clear: both;
+}
+.hidden{
+	display: none;
+}
+.outBox{
+	
+	background-size: cover auto;
+	height: 100%;
+	
+}
+#left
+{
+  width: 35%;
+  float: left;
+  position: absolute;
+  top: -32px;
+}
+#right
+{
+	float: right;
+	width: 50%;
+	margin-top: 25px;
+	margin-right: 40px;
+}
+.content
+{
+	width: 80%;
+	margin: 0px auto;
+	color: #be4b4c;
+	font-family: "黑体";
+	font-size: 1.1rem;
+	padding-top: 142px;
+}
+.time
+{
+	margin-bottom: 17px;
+	line-height: 23px;
+	margin-top: 25px;
+}
+.feedback
+{
+	margin: 0px auto;
+	margin-bottom: 12px;
+}
+.rose
+{
+
+	float: left;
+}
+.rose img
+{
+	  display: inline-block;
+  position: absolute;
+  width: 13%;
+  top: -11px;
+  left: -7px;
+}
+.title img
+{
+	margin-left: 31px;
+ 	width: 25%;
+}
+.siteR
+{
+	float: left;
+}
+.siteR img
+{
+  display: inline-block;
+  position: absolute;
+  width: 13%;
+  top: -9px;
+  left: -5px;
+}
+
+.feedback 
+{
+	position: relative;
+}
+.feedback p
+{
+	line-height: 20px;
+	margin-top: 10px;
+	
+}
+.position
+{
+	margin-bottom: 17px;
+	position: relative;
+}
+.imfor
+{
+	width: 100%;
+	height: 40px;
+	border: 2px solid  #be4b4c;
+	border-radius: 50px;
+	text-align: center;
+	line-height: 40px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+#click
+{   
+	margin-top: 15px;
+	width: 55%;
+	margin-bottom: 10px;
+}
+.cricle
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color:#FFFFFF;
+	position: absolute;
+	top: -7px;
+	left: 0;
+	z-index: 30;
+	border:3px solid rgba(190,75,76,0.7);
+}
+.cricle img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.cricle2
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color:#FFFFFF;
+	position: absolute;
+	top: -7px;
+	right: 0;
+	z-index: 30;
+	border:3px solid rgba(190,75,76,0.7);
+}
+#count
+{
+	font-size: 18px;
+}
+.number
+{   
+	margin:0 auto;
+  	width:100%;
+  	height:40px;
+  	background-color:#be4b4c;
+  	border-radius:50px;
+  	position:relative;
+  	z-index: 1;
+  	color: #FFF;
+  	text-align:center;
+  	margin-bottom:20px;
+  	font-size: 12px;
+  	line-height:40px;
+	
+}
+.guest {
+	margin-bottom: 20px;
+	width: 100%;
+}
+.MDcontent
+{
+	text-align: right;
+}
+#count
+{
+	margin-bottom: 10PX;
+	font-size: 12PX;
+	color: #BE4A4B;
+	font-style:italic
+}
+.pop-up
+{
+	  width: 255px;
+	  height: 395px;
+	  margin: 0px auto;
+	  background-color: #FFFFFF;
+	  position: relative;
+}
+.message
+{
+	margin-bottom: 20px;
+	
+}
+.border
+{
+	border-bottom:1px solid #be4b4c;
+	width: 198px;
+	margin: 0px auto;
+	padding-left: 6px;
+	color: #666666;
+	border-left:1px solid #be4b4c;
+	height: 6px;
+	border-right:1px solid #be4b4c;
+}
+#color
+{
+	color: #CCCCCC;
+}
+.borderL
+{
+	border-left:1px solid #be4b4c;
+	width: 4px;
+}
+.send
+{
+	background-color: #be4b4c;
+	width: 57px;
+	height: 57px;
+	border-radius: 50%;
+	margin: 0px auto;
+	text-align: center;
+	line-height: 57px;
+	color: #FFFFFF;
+	margin-bottom: 20px;
+	z-index: 9999;
+}
+.flower
+{
+	width: 250px;
+	padding-top: 25px;
+	margin-bottom: 25px;
+
+}
+.flower img
+{
+	width: 15%;
+	display: block;
+	margin: 0px auto;
+}
+.count span{
+	padding-right: 5px;
+}
+.name{
+	width: 200px;
+	margin: 0 auto;
+}
+.nameText{
+	width: 94%;
+	text-align: left;
+	border: none;
+	outline: none;
+	margin-left: 6px;
+	color: #000;
+}
+.site
+{
+	width: 66px;
+	text-align: center;
+	border: none;
+	outline: none;
+	opacity: 0.1;
+}
+.borderl
+{
+	border-left: px solid #be4b4c;
+}
+.hidden
+{
+	display: none;
+}
+.bRight
+{
+	height: 5px;
+	border-left: 1px solid #be4b4c;
+	width: 1px;
+	position: absolute;
+	left: 33.33%;
+}
+.bPosition
+{
+	position: relative;
+	width: 198px;
+}
+.bRight2
+{
+	height: 5px;
+	border-left: 1px solid #be4b4c;
+	width: 1px;
+	position: absolute;
+	right: 33.33%;
+}
+
+.popBoder{
+	width: 80%;
+	height: 350px;
+	text-align: center;
+	position: fixed;
+	left: 10%;
+	top: 12%;
+	z-index: 100;
+}
+.backgrond{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.7);
+	position:absolute;
+	top: 0;	
+	z-index: 99;
+}
+.add
+{
+	margin-right: 8px;
+	border: none;
+	outline: none;
+	opacity: 0;
+	width: 58px;
+}
+.fadeShow{
+	width: 66px;
+	text-align: center;
+	float: left;
+}
+.location{
+	width: 198px;
+	margin: 0 auto;
+	position: relative;
+}
+.locatAdd{
+	position: absolute;
+	top: 5px;
+}
+.count2
+{
+	font-size: 18px;
+	font-style: italic;
+}
+.cricle2 p
+{
+	font-size: 12px;
+	color: #BE4A4B;
+	line-height:46px;                
+}
+.postcard
+{
+	font-size: 26px;
+	font-style: italic;
+}
+.closed{
+	position: absolute;
+	right: .5rem;
+	top: .5rem;
+}
+.closed img{
+	width: 25px;
+	height: 25px;
+	z-index: 999;
+}
+.nameText{
+	font-size: 1rem;
+	font-family: "黑体";	
+}
+.count{
+	margin-right: 20px;
+}
+.null{
+	height: 30px;
+}
+.nameLoc{
+	width:80px;
+	height: 20px;
+	position: absolute;
+	z-index: 9;
+	left:-13px;
+	top: -39px;
+	color: #333333;
+}

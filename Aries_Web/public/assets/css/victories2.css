@@ -1,0 +1,108 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+html,body
+{
+	width: 100%;
+	height: 100%;
+	word-break: break-all;
+	word-wrap: break-word;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+.head
+{
+	width: 100%;
+	margin: 0px auto;
+}
+.head img
+{
+	display: block;
+	margin: 0px auto;
+	margin-top: 13px;
+	margin-bottom: 20px;
+	width: 19%;
+}
+.words p
+{
+	width: 80%;
+	font-size: 18px;
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 25px;
+}
+#word li
+{
+	width: 80%;
+	display: block;
+	text-align:left; 
+	margin: 0 auto;
+	line-height: 21px;
+}
+#price
+{
+	font-family: "arial black";
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+.black
+{
+	background-color: #000000;
+	height: 5px;
+	display: block;
+	margin: 0px auto;
+	width: 80%;
+	margin-bottom: 17px;
+	margin-top: 30px;
+}
+.ifom p
+{
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 17px;
+}
+.ifom img
+{
+	display: block;
+	margin: 0px auto;
+	width: 80%;
+	margin-bottom: 5px;
+}
+.whirt
+{
+	height: 37px;
+	width: 100%;
+}
+.emal
+{
+	height: 75px;
+	width: 100%;
+	background-color: #ea4881;
+	font-size: 1.1rem;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 20px;
+	color: #FFFFFF;
+	margin-top: 27px;
+}
+.wight
+{
+	height: 3px;
+}
+.foot img
+{
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 20px;
+	width: 200px;
+}
+.foot p
+{
+	text-align: center;
+	font-size: 15px;
+}
+

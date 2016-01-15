@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="assets/css/apply.css" />
+		<script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="assets/js/lib/jquery.mobile-events.min.js"></script>
+		<script type="text/javascript" src="assets/js/lib/jquery.form.js"></script>
+		<script src="assets/js/lib/lrz.mobile.min.js"></script>
+        <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+        <script type="text/javascript" src="assets/js/lib/net.js"></script>
+		<script type="text/javascript" src="assets/js/apply.js"></script>
+		<title>报名直通车</title>
+	</head>
+	<body>
+		<img style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" /> 
+		<div class="title">
+			贵州卫视《非常完美》报名表
+		</div>
+		<div class="content">
+			<div class="outbox">
+				<p><span id="symbol">※</span><span class="namevad">姓名</span></p>
+				<div class="name"><input type="text" id="name"/></div>
+			</div>
+			<div class="outbox">
+				<p><span id="symbol">※</span><span class="agevad">年龄</span></p>
+				<div class="age"><input type="text"  id="age"/></div>
+			</div>
+			<div class="outbox">
+				<p><span id="symbol">※</span><span class="mobvad" >手机号</span></p>
+				<div class="tel"><input type="text" id="mobl"/></div>
+			</div>
+			<div class="outbox">
+				<p><span id="symbol">※</span><span class="eMail">常用邮箱</span></p>
+				<div class="email"><input type="text" id="eMl"/></div>
+			</div>
+			<div class="outbox">
+				<p><span class="usintrd">自我介绍</span></p>
+				<div class="intro"><textarea  id="intrd" placeholder="你的性格、特长，爱好，生活经历等（不能超过200个字）"></textarea></div>
+			</div>
+			<div class="outbox">
+				<p><span id="symbol">※</span><span class="job">职业</span></p>
+				<div class="email"><input type="text" id="work"/ placeholder="不能超过30个字"></div>
+			</div>
+			<div class="outbox">
+				<p><span>学历</span></p>
+					<select class="option" id="edu">
+					<option value="">请选择</option>
+					<option value="初中" class="eduCt" >初中</option>
+					<option value="高中" class="eduCt" >高中</option>
+					<option value="大学本科" class="eduCt" >大学本科</option>
+					<option value="硕士研究生" class="eduCt" >硕士研究生</option>
+					<option value="博士研究生" class="eduCt" >博士研究生</option>
+					</select>
+			</div>
+			<div class="outbox">
+				<div class="selectL">
+					<p><span>自认为最美的部位</span></p>
+					<select class="opTion" id="bod">
+						<option value="">请选择</option>
+						<option value="脸蛋">脸蛋</option>
+						<option value="身材">身材</option>
+						<option value="气质">气质</option>
+						<option value="内心">内心</option>
+					</select>
+				</div>
+				<div class="selectR">
+					<p><span>你属于哪一类?(女性)</span></p>
+					<select class="opTion" id="kind">
+						<option value="">请选择</option>
+						<option value="小清新">小清新</option>
+						<option value="乖乖女">乖乖女</option>
+						<option value="文艺范">文艺范</option>
+						<option value="败金女">败金女</option>
+						<option value="外貌至上">外貌至上</option>
+						<option value="大叔控">大叔控</option>
+					</select>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="outbox">
+				<p><span class="each">您喜欢哪位嘉宾</span></p>
+				<div class="email"><input type="text" class="text" id="honored" placeholder="不能超过30个字"/></div>
+			</div>
+			<div class="outbox">
+				<p><span id="sayS">您想对嘉宾说的话</span></p>
+				<div class="email"><input type="text" class="text" id="say" placeholder="不能超过200个字"/></div>
+			</div>
+			<div class="outbox">
+				<p><span class="caiY">可以在舞台上展现的才艺</span></p>
+				<div class="email"><input type="text" class="text" id="show" placeholder="不能超过200个字"/></div>
+			</div>
+			<div class="outbox">
+				<p><span class="teshu">特殊的小习惯、小癖好和特长</span></p>
+				<div class="email"><input type="text" class="text" id="heiGht" placeholder="比如洁癖，喜欢收集的东西（不能超过200个字）"/></div> 
+			</div>
+			<div class="outbox">
+				<p><span class="oneself">个人最大的优点和缺点</span></p>
+				<div class="intro"><textarea class="text" id="intrdY" placeholder="不能超过200个字"></textarea></div>
+			</div>
+			<div class="outbox">
+				<p><span class="ziji">自己为恋爱对象做过印象最深的事情</span></p>
+				<div class="intro"><input type="text" class="text" id="thing" placeholder="不能超过200个字"/></div>
+			</div>
+			<div class="outbox">
+				<div class="photo">
+					<p><span id="symbol">※</span><span id="largePic">上传本人全身照</span></p>
+					<p><span id="color">10M以内</span></p>
+					<div class="image">
+						<input type="file" name="submit" id="submit1"value="0"/>
+						<div class="block" id="block1"></div>
+						<img class="realimg" src="assets/images/apply/sign-cross.png">
+					</div>
+				</div>
+				<div class="photoR">
+					<p><span id="symbol">※</span><span id="smallPic">上传本人半身照</span></p>
+					<p><span id="color">10M以内</span></p>
+					<div class="image">
+						<input type="file" name="submit" id="submit2"/>
+						<div class="block" id="block2"></div>
+						<img class="realimg" src="assets/images/apply/sign-cross.png">
+					</div>
+				</div>
+				<div class="clear"></div>
+				<form id="videoform" enctype="multipart/form-data">
+					<p><span id="symbol">※</span><span id="linkVd">上传30s自我介绍视频（二选一）</span><br/><br/><span id="color">一定要有报名视频才有效哦</sapn></p>
+					<div class="videodiv">
+						<img class="videoimg" src="assets/images/apply/sign-cross.png">
+						<!--<img class="delect" src="assets/images/apply/btn-del-form.png" />-->
+						<input type="file" name="submit" id="submit3"/>
+						<div class="blockvideo">
+						</div>
+						<video class="videoplay" id="videoplay" width="100%" height="100%" preload="auto"></video>
+					</div>
+				</form>
+				<div class="outbox">
+					<p><span id="symbol">※</span><span class="linkVd">视频链接（二选一）</span></p>
+					<div class="link"><input type="text" id="link"/></div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="foot">提交</div>
+		<div class="blank"></div>
+		<div class="black">
+          <div class="spinner">
+            <div class="spinner-container container1">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <div class="circle4"></div>
+            </div>
+          </div>
+          <p>正在上传...</p>
+        </div>
+	</body>
+</html>

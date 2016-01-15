@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">	
+		<title>非常完美-红人推荐</title>
+		<!--<link rel="stylesheet" href="assets/css/lib/base.css">	-->
+		<link href="assets/css/baseself.css" rel="stylesheet">	
+		<link href="assets/css/swiperself.css" rel="stylesheet">			
+		<link rel="stylesheet" href="assets/css/allstar.css">
+			
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/lib/utils.js"></script>
+		<script src="assets/js/lib/net.js"></script>
+		<script src="assets/js/lib/swiper.min.js"></script>
+		<script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+		<script src="assets/js/lib/model.js"></script>
+		<script src="assets/js/lib/jquery.self.adaption.js"></script>
+	</head>
+	<body>
+		<img style="position:absolute;left:-10000px; " src="assets/images/share/share-400.jpg" />
+		<div class="handShow"><img src="assets/images/selfdetail/sign-up.png"></div>
+	    <div class="swiper-container main-swiper">
+	      <div class="swiper-wrapper" id="dataInfo">
+			      	<script type="template" id="data-second">
+					   	  {{#data}}
+							        <div class="swiper-slide" id="time{{time}}">						           
+							           <div class="pagecontent">
+							           	       <div class="header"><img src="assets/images/selfdetail/hotlist-t.png"></div>
+							           	        <div class="content">
+											             
+										        </div>
+										        <div class="clear"></div>
+												<div class="footer"><img src="assets/images/selfdetail/foot-t.png"></div>	
+							           </div>
+							           
+							           
+							        </div>
+			         	 {{/data}}	
+					  </script>	
+		      </div>
+		    </div>			
+		<script src="assets/js/lib/jquery.self.adaption.js"></script>			
+		<script src="assets/js/allstar.js"></script>
+	</body>
+</html>

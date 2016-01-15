@@ -1,0 +1,82 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: "黑体",arial;
+	font-size: 14px;
+	word-break: break-all;
+	word-wrap: break-word;
+	position: relative;
+}
+body{
+	background-color: #F7F7F7;
+}
+a {
+	text-decoration: none;
+}
+.hidden{
+	display: none !important;
+}
+.clear{
+	clear: both;
+}
+input, button, textarea, select { font-size:100%; outline:none; resize:none}
+.clearfix:after,section:after{clear:both; display:block; height:0; visibility:hidden; line-height:0; content:'\20';}
+.banner{
+	width: 100%;
+	background: url(../images/sales/banner.jpg) left top no-repeat;
+	background-size: 100% 100%;
+	height: 180px;
+	margin-bottom: 20px;
+}
+.container {
+	width: 100%;	
+}
+.container p {
+	padding: 0 20px;
+	line-height: 20px;
+	color: #666666;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+dl{
+	width: 100%;
+	padding-bottom: 75px;
+}
+dt,dd {
+	margin: 0 20px;
+	background-position: center top;
+	background-size: 100% 100%;
+}
+dt {
+	height: 15px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+dd.what {
+	background-image: url(../images/sales/goods.jpg);
+	height: 350px;
+	width: 280px;
+	margin: 0 auto;
+}
+dt.what{
+	background-image: url(../images/sales/sign-what-to-buy.png);
+}
+dt.when{
+	background-image: url(../images/sales/sign-when-to-buy.png);
+}
+dt.how{
+	background-image: url(../images/sales/sign-how-to-buy.png);
+}
+dd a{
+	color: #de116e;
+}
+dd {
+	line-height: 20px;
+	color: #666666;
+	font-size: 13px;
+}
+

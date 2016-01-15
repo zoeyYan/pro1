@@ -1,0 +1,157 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family:  "黑体",arial;
+	font-size: 14px;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+a {
+	text-decoration: none;
+}
+.hidden{
+	display: none;
+}
+.clear{
+	clear: both;
+}
+.main{
+	width: 100%;
+	height: 100%;
+}
+.mtTop1{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	position: fixed;
+	top: 2px;
+	z-index: 99;
+}
+.mttLeft{
+	float: left;
+	width: 15%;
+	text-align: center;
+}
+.mttMiddle{
+	float: left;
+	width: 70%;
+	height: 30px;
+	margin-top: 4px;
+}
+.mttRight{
+	float: left;
+	width: 15%;
+	text-align: center;
+}
+.mttmItem{
+	float: left;
+	width: 32.7%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid;
+}
+.changeBorder{
+	border-left:none ;
+	border-right:none ;
+}
+.mttRight p{
+	width: 30px;
+	height: 30px;
+	border: 1px solid;
+	margin: 0 auto;
+}
+.mtTop2{
+	margin-top: 15%;
+	width: 100%;
+	height: 35px;
+	border-bottom:1px solid ;
+	border-top:1px solid ;
+}
+.mtt2Item{
+	width: 24.5%;
+	float: left;
+	text-align: center;
+	border-left: 1px solid;
+	height: 35px;
+	line-height: 35px;
+}
+.changeLine{
+	border-left:none !important;
+}
+.guestPic{
+	width: 96%;
+	height: 170px;
+	margin: 0 auto;
+	border: 1px solid;
+	margin-top: 5%;
+	position: relative;
+}
+.guestInfo{
+	position: absolute;
+	bottom: 0;
+}
+.mgItems{
+	width:140px;
+	height: 160px;
+	margin: 5px;
+	border: 1px solid;
+	float: left;
+	position: relative;
+}
+.mgItems img{
+	width: 140px;
+	height: 140px;
+	/*border: 1px solid blueviolet;*/
+}
+.mgInfo{
+	position: absolute;
+	bottom: 20px;
+}
+.mgInfo p{
+	padding: 0px 0px 0px 10px;
+}
+.moreGuest{
+	width: 304px;
+	margin: 0 auto;
+	margin-top: 5%;
+	height: 100px;
+}
+.countTag{
+	width:40px;
+	height: 30px;
+	border: 1px solid;
+	margin: 5%;
+	text-align: center;
+	line-height: 30px;
+}
+.guestInfo{
+	width: 100%;
+	height: 40px;	
+}
+.giLoc{
+	width: 33.3%;
+	height: 40px;
+	float: left;
+}
+.scountTag{
+	position: absolute;
+	width: 30px;
+	height: 20px;
+	text-align: center;
+	border:1px solid;
+	left: 15px;
+	top: 15px;
+}
+.pramsA{
+	width: 50%;
+	float: left;
+	height: 20px;
+}
+.pramsA p{
+	font-size: 12px;
+}

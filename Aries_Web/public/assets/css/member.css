@@ -1,0 +1,560 @@
+html{
+	font-family:  "黑体",arial;
+}
+body {
+  background-color: #f7f7f7;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul,li {
+	list-style: none;
+}
+.clearfix:after{clear:both; display:block; height:0; visibility:hidden; line-height:0; content:'\20';}
+.header {
+  position: relative;
+  height: 19rem;
+  padding-top: 3.4rem;
+  padding-left: 16rem;
+  overflow: hidden;
+  padding-bottom: 4rem;
+}
+.header-cover-mark{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgba(0,0,0,.2);
+  -webkit-filter: blur(1px); /*解决安卓下透明层出不来的问题，目前不知道什么原因*/
+}
+.header-cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  width: 115%!important;
+  height: auto!important;
+  z-index: -2;
+}
+
+.head-portrait {
+  position: absolute;
+  top: 3.5rem;
+  left: 3.5rem;
+  width: 11.5rem;
+  height: 11.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+}
+.head-border {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.3);
+    top: 3.5rem;
+    left: 3.5rem;
+    width: 11.5rem;
+    height: 11.5rem;
+}
+.metadata {
+  color: #fff;
+  margin-right: 20px;
+}
+.metadata p {
+  margin-bottom: .6rem !important;
+}
+.p-name {
+  font-size: 2rem;
+  display: inline-block;
+
+  /*float: left;
+  width: 10rem;
+  display: block;*/
+}
+.sex, .mms{
+  vertical-align: middle;
+	width: 14px;
+	height: 14px;	
+}
+.p-code {
+  font-size: .9rem;
+  margin-bottom: 1rem;
+}
+.p-signa {
+  font-size: 1.3rem;
+  min-height: 2.7rem;
+  margin-bottom: 1rem!important;
+  width: 160px;
+}
+.focus-btn {
+  width: 6.0rem;
+  height: 3.5rem;
+  display: inline-block;
+  background: url(../images/member/btn-follow.png) no-repeat;
+  background-size: 100%;
+}
+.un-focus-btn {
+  width: 6.0rem;
+  height: 3.5rem;
+  display: inline-block;
+  background: url(../images/member/btn-unfollow.png) no-repeat;
+  background-size: 100%;
+}
+.article {
+  position: relative;
+  background-color: #fff;
+  height: 5rem;
+  padding: 1rem 0;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+#chat {
+	margin-bottom: 0;
+	border-bottom: none;
+}
+.article-item {
+  width: 25%;
+  float: left;
+  text-align: center;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  border-left: 1px solid #ddd;
+}
+.article-item:first-child {
+  border-left: 0;
+}
+.article-item-num {
+  font-size: 1.4rem;
+  color: #666;
+}
+.article-item-label {
+  font-size: 1.25rem;
+  color: #aaa;
+}
+.chat {
+  font-size: 1.6rem;
+  line-height: 5rem;
+  padding: 0;
+  padding-left: 2rem;
+}
+.chat > span:nth-child(1) {
+  color: #666;
+}
+.chat > span:nth-child(2) {
+  float: right;
+  margin-right: 1.5rem;
+  color: #aaa;
+}
+
+.ico-lt {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 1rem;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../images/member/icon-tonext.png);
+}
+.tab {
+  list-style: none;
+}
+.tab > li {
+  position: relative;
+  font-size: 1.4rem;
+  width: 33.3333%;
+  float: left;
+  text-align: center;
+  overflow: hidden;
+  color: #ccc;
+}
+.ico-p, .ico-g, .ico-h{
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.ico-p {
+  background-image: url(../images/member/icon-img-grey.png);
+}
+.ico-g {
+  background-image: url(../images/member/icon-gifts-grey.png);
+}
+.ico-h {
+  background-image: url(../images/member/icon-items-grey.png);
+}
+.tab > li.active .ico-p {
+  background-image: url(../images/member/icon-img-on.png);
+}
+.tab > li.active .ico-g {
+  background-image: url(../images/member/icon-gifts-on.png);
+}
+.tab > li.active .ico-h {
+  background-image: url(../images/member/icon-items-on.png);
+}
+
+.line {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  border: 0rem solid #507daf;
+  -webkit-transition: left 200ms,right 200ms;
+}
+.tab > li.active {
+  color: #507daf;
+}
+.tab > li.active .line {
+  left: 1rem;
+  right: 1rem;
+  border-bottom: .15rem solid #507daf;
+}
+
+.img-row {
+  margin-left: -.4rem;
+}
+.img-item {
+  width: 33.3333%;
+  padding-left: .4rem;
+  padding-bottom: 0.4rem;
+  float: left;
+}
+.img-thumb {
+  border: none;
+}
+.black{
+	display: none;
+	position:fixed;
+	width:100%;
+	height: 100%;
+	top:0px;
+	left:0px;
+	background-color:rgba(0,0,0,0.3);
+	z-index: 999;
+	}
+.black p {
+	margin-left: -50px;
+	left: 50%;
+	width: 100px;
+	top: 40%;
+	color: #FFFFFF;
+	text-align: center;
+	position: relative;
+}
+.spinner {
+	margin-left: -20px;
+	left: 50%;
+	top:30%;
+  width: 40px;
+  height: 40px;
+  position:absolute;
+}
+ 
+.container1 > div, .container2 > div, .container3 > div {
+  width: 8px;
+  height: 8px;
+  background-color: #FFFFFF;
+ 
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner .spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+ 
+.container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+ 
+.container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+ 
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+ 
+.container2 .circle1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+ 
+.container3 .circle1 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+.container1 .circle2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+ 
+.container2 .circle2 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+ 
+.container3 .circle2 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+ 
+.container1 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+ 
+.container2 .circle3 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+ 
+.container3 .circle3 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+ 
+.container1 .circle4 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+ 
+.container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+ 
+.container3 .circle4 {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+.viewpic{
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	background-color: rgba(0,0,0,0.6);
+	display: none;
+	z-index: 100;
+}
+.imgbox {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-size: 100% auto;
+	z-index: 200;
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+.delete {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background:url(../images/member/btn-delimg.png) no-repeat left top;
+	background-size: 100% 100%;
+	width: 45px;
+	height: 45px;
+	z-index: 300;
+}
+.delinfo{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 99999;
+	display: none;
+}
+.isconfirm {
+	width: 180px;
+	height: 80px;
+	position: relative;
+	top: 45%;
+	left: 50%;
+	margin-left: -90px;
+	z-index: 100000;
+	border-radius: 5px;
+	background: rgba(240,240,240,0.9);
+	box-shadow: 0 0 3px #000000;
+	text-align: center;
+	overflow: hidden;
+}
+.isconfirm p{
+	line-height: 42px;
+	font-size: 16px;
+	border-bottom: 1px solid #CCCCCC;
+}
+.isconfirm button:first-child {
+	border-left: 0;
+}
+.isconfirm button {
+	position: relative;
+	border: 0;
+	background: rgba(240,240,240,0);
+	height: 35px;
+	width: 49%;
+	float: left;
+	font-family: "黑体";
+	font-size: 15px;
+	border-left: 1px solid #CCCCCC;
+}
+.gift-list {
+	width: 100%;
+	padding: 3px;
+}
+.gift-item {
+	width: 25%;
+	padding-right: 3px;
+	font-size: 10px;
+	color: #999999;
+	float: left;
+	padding-bottom: 8px;
+}
+.gift-class {
+	background-image: url(../images/member/rose.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: cover;
+	width: 60px;
+	height: 60px;
+	padding: 8px 8px 5px;
+	margin: 0 auto;
+}
+.gift-item p {
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+	margin-bottom: 5px;
+}
+.honor-list{
+	width: 100%;
+	padding: 3px;
+}
+.honor-item {
+	width: 25%;
+	padding-right: 3px;
+	font-size: 10px;
+	color: #999999;
+	float: left;
+	padding-bottom: 12px;
+}
+.honor-class {
+	background-image: url(../images/member/default-badge.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: cover;
+	width: 60px;
+	height: 60px;
+	padding: 8px 8px 5px;
+	margin: 0 auto;
+}
+.gift,.honor {
+	display: none;
+}
+.nonono{
+	display: none;
+}
+.realAge{
+	margin-left: 5px;
+}
+.send-btn{
+  width: 6.0rem;
+  height: 3.5rem;
+  display: inline-block;
+  background: url(../images/share/btn-sendgifts.png) no-repeat;
+  background-size: 100%;
+}
+.confirm {
+  width: 100%;
+  z-index: 100000;
+  border-radius: 5px;
+  font-family: "黑体";
+  box-shadow: 0 0 3px #000000;
+  text-align: center;
+  overflow: hidden;
+}
+.sweet-alert{
+    padding: 0;
+    width: 248px;
+    margin-left: -124px;
+    left: 50%;
+}
+.sweet-alert button {
+   margin: 0px; 
+   border-radius:0 0 5px 5px;
+}
+.sweet-alert p {
+  margin-bottom: 15px;
+  padding: 0 20px;
+  font-family: "黑体",arial;
+  font-size: 13px;
+  text-align: left;
+}
+.sweet-alert h2 {
+  color: #9100ba;
+  font-size: 15px;
+  font-family: "黑体";
+  font-weight: bold;
+}
+.sweet-alert .icon {
+  margin: 13px auto;
+}
+.distance{
+	margin-left: 5px;
+}
+.label{
+	width:14px;
+	height: 14px;
+}
+.hidden{
+	display: none !important;
+}
+.modify{
+	/*margin-top: -8px;*/
+}
+#new {
+    display: none;
+    width: 30px;
+    height: 26px;
+    background-image: url(../images/family/iconfont-new.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    margin-top: 3px;
+    position: absolute;
+}

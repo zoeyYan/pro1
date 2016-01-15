@@ -1,0 +1,101 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f7f7f7;
+    font-family:  "黑体",arial;
+      -webkit-overflow-scrolling: touch;
+}
+*{
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+ul,li {
+    list-style: none;
+}
+.clearfix:after{clear:both; display:block; height:0; visibility:hidden; line-height:0; content:'\20';}
+.art-container {
+  padding-top: 10px;
+  position: absolute;
+  width: 100%;
+  overflow-y: scroll;
+  top: 0px;
+  bottom: 0px;
+}
+.a-title{
+    color: #666666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%;
+    float: left;
+    line-height: 40px;
+    padding-left: 20px;
+}
+.a-del{
+    display: inline-block;
+    width: 20%;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    background-image: url(../images/family/btn_del.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 60%;
+}
+
+.art-item {
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+.art-item:first-child {
+    border-top: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+.back {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding:0 15%;
+    background-image: url(../images/family/sign-lolipop.png);
+    background-repeat: no-repeat;
+    background-size: 22% auto;
+    background-position: center 37%; 
+}
+.back p {
+    width: 100%;
+    color: #999999;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+.new {
+    display: inline-block;
+    width: 30px;
+    height: 26px;
+    background-image: url(../images/family/iconfont-new.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    margin-top: 3px;
+}
+.true {
+    display: inline-block;
+}
+.false{
+    display: none;
+}
+.artcon {
+    width: 70%;
+    height: 40px;
+    display: inline-block;
+}

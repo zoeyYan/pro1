@@ -1,0 +1,108 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	text-decoration: none;
+	list-style: none;
+}
+html,body
+{
+	width: 100%;
+	height: 100%;
+	word-break: break-all;
+	word-wrap: break-word;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+.vs img
+{
+	width:100%;
+	display: block;
+	margin-bottom: 17px;
+}
+.word span
+{
+	display: block;
+	font-size:14px;
+	width: 80%;
+	margin: 0px auto;
+	line-height: 21px;
+	margin-bottom: 17px;
+}
+.ENg
+{
+	font-family: "arial black";
+}
+.black
+{
+	background-color: #000000;
+	height: 5px;
+	display: block;
+	margin: 0px auto;
+	width: 100%;
+	margin-bottom: 17px;
+}
+.Time
+{
+	font-family: "arial black";
+	font-weight: bold;
+	width: 80%;
+	margin: 0px auto;
+	font-size: 20px;
+	word-break: break-all;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-align: left;
+}
+.Time p{
+	font-size: 1.2rem;
+	margin-bottom: 17px;
+}
+#pink
+{
+	color: #ea4881;
+}
+.foot
+{
+	margin: 0px auto;
+	width: 80%;
+}
+.button
+{
+	margin-bottom: 20px;
+	height: 40px;
+	width: 100%;
+	background-color: #ea4881;
+	text-align: center;
+	padding-top: 20px;
+	color: #FFFFFF;
+
+}
+.button a
+{
+	color: #FFFFFF;
+	font-size: 1.2rem;
+	font-family: "arial black";
+	font-weight: bold;
+	
+}
+.whirt
+{
+	height: 37px;
+	width: 100%;
+}
+.wight
+{
+	height: 3px;
+}
+.foot img
+{
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 10px;
+	width: 200px;
+}
+.foot p
+{
+	text-align: center;
+	font-size: 15px;
+}

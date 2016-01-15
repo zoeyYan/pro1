@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		 <link rel="stylesheet" type="text/css" href="assets/css/manage.css"/>
+		<script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="assets/js/lib/utils.js"></script>
+        <script type="text/javascript" src="assets/js/lib/net.js"></script>
+		<script type="text/javascript" src="assets/js/manage.js"></script>    
+		<title></title>
+	</head>
+	<body>
+	    <div class="content">
+            <form class="program" enctype="multipart/form-data">
+                <dl>
+                    <dt>标题</dt><dd><input type="text" class="title" placeholder="格式为：20150711非常完美嘉宾"/></dd>
+                    <dt>时间</dt><dd><input type="datetime" style="opacity: 0.8;" class="time"  placeholder="请输入" value=""/></dd>
+                    <dt>是否显示在线上</dt>
+                    <dd>
+                        <select class="isonline">
+                        	<option value="0">不显示</option>
+                        	<option value="1">显示</option>
+                        </select>
+                    </dd>
+                </dl>
+            </form>
+            <button class="create">创建新一期节目</button>
+        </div>
+        <div class="addnew">
+            
+        </div>
+	</body>
+</html>

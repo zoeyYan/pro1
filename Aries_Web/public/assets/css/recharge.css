@@ -1,0 +1,49 @@
+.title
+{
+    background-color: #F7F7F7; 
+	height: 40px;
+	font-size: 13px;
+	color: #999999;	
+	line-height: 40px;
+}
+.have {
+	color: #ff0000;
+}
+p
+{ 
+	width: 100%;
+	border-bottom:1px solid #eaeaea;
+	height: 50px;
+	font-size: 16px;
+	line-height: 50px;
+	padding-left: 20px;
+	position: relative;
+}
+.cost {
+	color: #999999;
+}
+.chose
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 26px;
+	background-size: cover;
+	background-image: url(../images/recharge/icon-greentick.png);	
+  	position: absolute;
+  	right: 15px;
+  	top: 25%;
+}
+.charge
+{
+  width: 90%;
+  color: #fff;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  margin: 0 5%;
+  background-color: #28d001;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 15px;
+}

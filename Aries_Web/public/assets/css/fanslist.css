@@ -1,0 +1,151 @@
+body
+{
+	background-color:#f7f7f7 ;
+	overflow: hidden;
+	width:100%;
+	height: 100%;
+}
+html{
+    height: 100%;
+}
+ul,li {
+    list-style: none;
+}
+.chose 
+{
+	width: 100%;
+	list-style: none;
+    background-color: #fff;
+	height: 40px;
+	display: table;
+	margin-bottom: 10px;
+	border-bottom:1px solid #EAEAEA;
+	z-index: 10;
+	position: fixed;
+	overflow: hidden;
+}
+.chose  > li
+{  
+  font-size:15px;
+  width:49%;
+  height: 40%;
+  text-align: center;
+  color: #666;
+  line-height: 40%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.line {
+	border-bottom: 3px solid #be14bf;	
+}
+.hidden
+{
+    display: none;
+}
+.panel{
+    width: 100%;
+    height: 100%; 
+    padding-top: 50px;
+    padding-bottom: 10px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.fans-item {
+    width: 100%;
+    font-size: 15px;
+    line-height: 50px;
+}
+.fans-item section{
+    height: 50px;
+}
+.fans>ul>li:first-child{
+    border-top: 1px solid #EAEAEA;
+}
+.info {
+    padding: 0 15px;
+    border-bottom: 1px solid #EAEAEA;
+    background: #FFFFFF;
+    position: relative;
+}
+.info em{
+    display: inline-block;
+    height: 50px;
+    width: 12px;
+    position: absolute;
+    right: 15px;
+    background-repeat: no-repeat;
+    background-position:right center;
+    background-image: url(../images/chat/icon-up.png);
+}
+.info .down{
+    background-image: url(../images/chat/icon-down.png);
+}
+.avatar {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    position: relative;
+    top: -2px;
+    margin-right: 8px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-size:cover;
+    background-image: url(../images/chat/default-user.jpg);
+    background-position:left top ;
+    vertical-align: middle;
+}
+.name {
+    font-style: normal;
+    color: #666666;
+}
+.item {
+    float: left;
+    width: 49.9%;
+    color: #999999;
+    text-align: center;
+    padding-left: 25px;
+    background-repeat: no-repeat;
+    background-position: 35% 12px;
+    background-size: auto 50%;
+    border-left: 1px solid #EAEAEA !important;
+}
+.interest {
+    border-left:none;
+    background-image: url(../images/chat/icon-addtofollow.png);
+}
+.uninterest {
+    border-left:none;
+    background-image: url(../images/chat/icon-followed.png);
+}
+li.uninterest {
+    display: none;
+}
+.page {
+    border-left:none;
+    background-image: url(../images/chat/icon-profile.png);
+}
+.link {
+    text-decoration: none;
+    margin-left: -40%;
+    padding-left: 40%;
+    color: #999999;
+    display: inline-block;
+    width: 100%;
+}
+a.link:visited {
+    color: #999999;
+}
+.fun {
+    display: none;
+}
+#fans-item li:last-child .fun{
+    border-bottom: 1px solid #EAEAEA;
+}
+#int-item li:last-child .fun{
+    border-bottom: 1px solid #EAEAEA;
+}
+.label{
+	width: 14px;
+	height: 14px;
+}
+

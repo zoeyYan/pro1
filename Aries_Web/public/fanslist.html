@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="assets/css/lib/base.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/fanslist.css">
+		<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+		<title>粉丝列表</title>
+	</head>
+	<body>
+		<ul class="chose">
+			<li class="fan line">粉丝</li>
+			<li class="att">关注</li>
+			<li class="baseLine"></li>
+		</ul>
+        <div class="panel">
+            <div class="fans" id="fans">
+                <ul id="fans-item" data-page="0" data-size="15" data-isfor="false">
+                </ul>
+                <script type="template" id="fans-tmp">
+                    {{#each this}}
+                        <li class="fans-item">
+                            <section class="info" label={{is_verified}} data-id="{{id.accountId}}"><span class="avatar" style="background-image: url({{#if head_image}}{{head_image}}{{else}}assets/images/member/default-user-m.jpg{{/if}})"></span><i class="name">{{name}}<img src="assets/images/member/icon-v.png" class="label hidden"></i><em></em></section>
+                            <section class="fun">
+                                <ul>
+                                    <li class="item interest" data-id="{{id.accountId}}">关注</li>
+                                    <li class="item uninterest" data-id="{{id.accountId}}">已关注</li>
+                                    <li class="item page"><a class="link" href="member.html?id={{id.accountId}}">主页</a></li>
+                                </ul>
+                            </section>
+                        </li>
+                    {{/each}}
+                </script>
+              </div>
+            <div class="ifans hidden" id="ifans">
+                <ul id="int-item" data-page="0" data-size="15" data-isfor="false">
+                </ul>
+                <script type="template" id="int-tmp">
+                    {{#each this}}
+                        <li class="fans-item">
+                            <section class="info" label={{is_verified}} data-id="{{id.accountId}}"><span class="avatar" style="background-image: url({{#if head_image}}{{head_image}}{{else}}assets/images/member/default-user-m.jpg{{/if}})"></span><i class="name">{{name}}<img src="assets/images/member/icon-v.png" class="label hidden"></i><em></em></section>
+                            <section class="fun">
+                                <ul>
+                                    <li class="item interest" data-id="{{id.accountId}}">关注</li>
+                                    <li class="item uninterest" data-id="{{id.accountId}}">已关注</li>
+                                    <li class="item page"><a class="link" href="member.html?id={{id.accountId}}">主页</a></li>
+                                </ul>
+                            </section>
+                        </li>
+                    {{/each}}
+                </script>
+            </div>
+        </div>
+		<script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="assets/js/lib/handlebars-v2.0.0.js"></script>
+        <script type="text/javascript" src="assets/js/lib/jquery.mobile-events.min.js"></script>
+        <script type="text/javascript" src="assets/js/lib/swiper.min.js"></script>
+        <script type="text/javascript" src="assets/js/lib/utils.js"></script>
+        <script type="text/javascript" src="assets/js/lib/net.js"></script>
+        <script src="assets/js/fanslist.js"></script>
+	</body>
+</html>

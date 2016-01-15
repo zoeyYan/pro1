@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 移动端不缩放 -->
+<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+<link href="assets/css/baseself.css" rel="stylesheet">
+<link href="assets/css/swiperself.css" rel="stylesheet">
+<link href="assets/css/lib/indexself.css" rel="stylesheet">
+<script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+<script src="assets/js/lib/utils.js"></script>
+<script src="assets/js/lib/net.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/lib/handlebars-v2.0.0.js"></script>
+<script src="assets/js/lib/model.js"></script>
+<title></title>
+</head>
+<body>
+    <audio style="display: none;height: 0;" autoplay="autoplay" loop="loop"></audio>
+    <img class="share-avatar" style="position:absolute;left:-10000px; " src="" />
+  <!-- 全局 -->
+  <div class="container main">
+    <div class="handShow"><img src="assets/images/selfdetail/sign-up.png"></div>
+    <div class="home"><img src="assets/images/selfdetail/btn-home.png"></div>
+    <div class="play" id="playbtn"><img src="assets/images/selfdetail/btn-speaker.png"></div>
+    <div class="morebtn ">
+        <div class="btnArea">
+            <img src="assets/images/selfdetail/btn-morehot.png">
+            <img src="assets/images/selfdetail/btn-pro.png">
+        </div>  
+    </div>
+    <!-- 加载 -->
+    <div class="loading" id="loading"></div>
+
+    <!-- 背景音乐 -->
+    <div class="bgm">
+      <video src=""></video>
+    </div>
+    
+    <!-- 主内容  -->
+    <div class="swiper-container main-swiper">
+      <div class="swiper-wrapper" id="dataInfo">
+                        <script type="template" id="data-second">
+                              {{#data}}
+                                    <div class="swiper-slide">
+                                       <div class="pagebg">
+                                            <img src="{{picUrl}}">          
+                                       </div>
+                                       <div class="pagecontent">
+                                           
+                                       </div>
+                                    </div>
+                                {{/data}}   
+                           </script>    
+      </div>
+    </div>
+  </div>
+    <script src="assets/js/lib/swiper.min.js"></script>
+    <script src="assets/js/lib/jquery.self.adaption.js"></script>
+    <script src="assets/js/selfdetail.js"></script>
+    <script src="assets/js/wx_selfshare.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

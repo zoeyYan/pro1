@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>地图</title>
+		<style type="text/css">
+		* {
+			margin:0px;
+			padding:0px;
+		}
+		body, .map {
+			width:100%;
+			height:100%;
+		}
+		.search {
+			position: absolute;
+			z-index: 1;
+		}
+		.btns {
+			position: absolute;
+			width: 100px;
+			height: 42px;
+			bottom: 0px;
+			left: 50%;
+			margin-left: -50px;
+			text-align: center;
+			display: none;
+		}
+		.btns #in {
+			width: 40px;
+			height: 40px;
+			cursor: pointer;
+			opacity: 0.8;
+			margin: 1px;
+		}
+		.btns #in:hover {opacity: 1;}
+		</style>
+		<script charset="utf-8" src="../../jquery/jquery-1.8.1.js"></script>
+		<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+	</head>
+	<body>
+		<div class="map"></div>
+		<div class="btns">
+			<img id="in" src="../../../../diazo/img/map/navigate.png"/>
+		</div>
+
+		<script>
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+				return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			function getLocation(success, err){
+				if (!window.navigator.geolocation)
+					return false;
+				window.navigator.geolocation.getCurrentPosition(function(position){
+					var _latlng = new qq.maps.LatLng(position.coords.latitude, position.coords.longitude);
+					success(_latlng);
+				}, function(error){
+					var msg;
+					switch(error.code) {
+						case error.TIMEOUT:
+							msg = "获取超时!请稍后重试!";
+							break;
+						case error.POSITION_UNAVAILABLE:
+							msg = '无法获取当前位置!';
+							break;
+						case error.PERMISSION_DENIED:
+							msg = '您已拒绝共享地理位置!';
+							break;
+						case error.UNKNOWN_ERROR:
+							msg = '无法获取当前位置!';
+							break;
+					}
+					err(msg);
+				}, {timeout: 5000});
+			}
+			function message(type, content){
+				if(parent.global)
+					parent.global.message(type, content, 1000);
+				else
+					alert(content);
+			}
+			function wxExist(){
+				return (parent.wx_permissions && parent.wx_permissions['openLocation']);
+			}
+
+			var map, marker, infoLabel, $smap;
+			function createOverlay(center, label){
+				// 地址标志
+				marker = new qq.maps.Marker({
+					position: center,
+					draggable: true,
+					map: map
+				});
+				// 标签文字
+				infoLabel = new qq.maps.Label({
+					map: map,
+					style: {borderColor:"red"}
+				});
+				infoLabel.setContent(label);
+				infoLabel.setPosition(center);
+			}
+
+			$(document).ready(function(){
+				// url获取地图属性
+				var id = getParameterByName('id'),
+					view = getParameterByName('view'),
+					nb = getParameterByName('nb'),
+					mb = getParameterByName('mb'),
+					nc = getParameterByName('nc'),
+					mc = getParameterByName('mc'),
+					zoom = getParameterByName('zoom'),
+					label = getParameterByName('label').trim(),
+					flag_locate = false,
+					flag_search = false;
+				if(!nb || !mb || !nc || !mc)
+					flag_locate = true;
+				nb = Number(nb)?Number(nb):121.39979660511018;
+				mb = Number(mb)?Number(mb):31.206074968092846;
+				nc = Number(nc)?Number(nc):121.39979660511018;
+				mc = Number(mc)?Number(mc):31.206074968092846;
+				zoom = Number(zoom)?Number(zoom):13;
+
+				var map_center = new qq.maps.LatLng(mb, nb),
+					marker_center = new qq.maps.LatLng(mc, nc);
+
+				$smap = $('.map');
+				// create地图
+				map = new qq.maps.Map($smap[0], {
+					center: map_center,
+					zoom: 5
+				});
+				createOverlay(map_center, label);
+
+				function handle() {
+					var map_center = map.getCenter(), 
+						marker_center = marker.getPosition(), 
+						zoom = map.getZoom();
+					if (parent.interaction)
+						parent.interaction.elementlist.where({id: id})[0].iview.updatemap(false, map_center, marker_center, zoom, label);
+				}
+				if (flag_locate && window.navigator.geolocation) 
+				{
+					message("info", "正在定位...");
+					function complete() {
+						// 如果正在搜索，则不采用自动定位的点
+						if(flag_search)
+							return;
+						map.setCenter(map_center);
+						marker.setPosition(marker_center);
+						infoLabel.setPosition(marker_center);
+						map.setZoom(zoom);
+						handle();
+					}
+					getLocation(function(p) {
+						map_center = marker_center = p;
+						complete();
+					}, function(msg) {
+						complete();
+						message("error", msg);
+					});
+				} 
+				else 
+				{
+					if (flag_locate)
+						message("info", "浏览器不支持定位，请手动设置。");
+					map.setZoom(zoom);
+					marker.setPosition(marker_center);
+					infoLabel.setPosition(marker_center);
+					handle();
+				}
+
+				// 播放模式
+				if (view && view == "view") 
+				{
+					// 取消标志拖拽，去除地图多余控件
+					marker.setDraggable(false);
+					map.setOptions({
+						panControl: false,
+						zoomControl: false,
+						scaleControl: false,
+						mapTypeControl: false
+					});
+					
+					var dir = "../../../../";
+					if (parent != window)
+						dir = "/staticfs/";
+					
+					var navigate_div = 
+						'	<style>' + 
+						'	  #map_navigate .btns {position: absolute; width: 160px; bottom: 0px; left: 50%; margin-left: -80px; text-align: center;display: block;}' + 
+						'	  #map_navigate .btns img {width: 40px; height: 40px; cursor: pointer; opacity: 0.8;margin: 2px;}' + 
+						'	  #map_navigate .btns img:hover {opacity: 1;}' + 
+						'	  #map_navigate img#close {position: absolute; top: 1px; right: 1px;width: 40px; height: 40px; cursor: pointer; opacity: 0.8;}' + 
+						'	  #map_navigate img#close:hover {opacity: 1;}' + 
+						'	  /* 地图区域样式 */' + 
+						'	  #map_navigate {position: fixed; width:100%; height:100%; top: 0; left: 0;z-index:100000; display:none}' + 
+						'	  #map_navigate img {max-width: none;}' + 
+						'	  #map_navigate .map {width:100%; height:100%;background-color: rgb(229, 227, 223);}' + 
+						'	  /* 导航文字区域样式 */' + 
+						'	  #map_navigate #tip {width: 100%;height: 100%;position: absolute;top: 0;left: 0;background-color: white;overflow: auto;display: none;}' + 
+						'	  #map_navigate #tip h1{padding:10px 0 9px 7px;font:bold 16px arial,sans-serif;}' + 
+						'	  #map_navigate #tip #tip_from{background:url(' + dir + 'diazo/img/map/trans_icons.png) no-repeat 5px 5px;padding:8px 0 8px 33px;line-height:15px;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}' + 
+						'	  #map_navigate #tip table{width: 100%;font:16px arial,sans-serif;border-collapse:collapse;}' + 
+						'	  #map_navigate #tip #tip_to{border-bottom: 1px solid #ccc;background:url(' + dir + 'diazo/img/map/trans_icons.png) no-repeat 5px -21px;padding:8px 0 8px 33px;line-height:15px;}' + 
+						'	  #map_navigate #tip #tip_bottom {background: rgb(229, 236, 249);font: 12px/normal arial, sans-serif;padding: 2px;color: rgb(119, 119, 204);margin-bottom: 10px;border-bottom-color: 1px solid rgb(204, 204, 204);padding-left: 8px;}' + 
+						'	</style>' + 
+						'  <div class="map"></div>' + 
+						'  <div class="btns">' + 
+						'	 <img id="exit" class="in" src="' + dir + 'diazo/img/map/exit.png"/>' + 
+						'	 <img id="bus" class="in" src="' + dir + 'diazo/img/map/bus.png"/>' + 
+						'	 <img id="drive" class="in" src="' + dir + 'diazo/img/map/drive.png"/>' + 
+						'  </div>' + 
+						'  <div id="tip">' + 
+						'	 <img id="close" src="' + dir + 'diazo/img/map/close.png"/>' + 
+						'	 <h1><span>驾车</span>前往 终点 的路线</h1>' + 
+						'	 <div id="tip_from">起点</div>' + 
+						'	 <table cellpadding="0" cellspacing="0" border="0"></table>' + 
+						'	 <div id="tip_to">终点</div>' + 
+						'	 <div id="tip_bottom">全程：<span class="distance">2317.7</span> 公里 / <span class="day">1</span> 天<span class="hour">11</span>小时</div>' + 
+						'</div>';
+					var click_event = "ontouchend" in document ? "touchend" : "click";
+
+					// 进入导航模式
+					$(".btns #in").parent().show();
+					$(".btns #in").on(click_event, function() {
+						// 优先调用微信的地图接口
+						var _address = "点击下方按钮开始导航";
+						var geocoder = new qq.maps.Geocoder({
+							complete: function(result){
+								_address = result.detail.address;
+								if(wxExist())
+								{
+									parent.wx.openLocation({
+										latitude: marker_center.lat,
+										longitude: marker_center.lng,
+										name: label,
+										address: _address,
+										scale: zoom
+									});;
+								}
+								else
+								{
+									if (parent.$("#map_navigate").length)
+										parent.$("#map_navigate").html(navigate_div);
+									else
+										parent.$("body").append('<div id="map_navigate">' + navigate_div + '</div>');
+
+									parent.map_navigate = {
+										map: null,
+										marker: null,
+										infoWin: null,
+										$nmap: parent.$("#map_navigate"),
+										$tip: parent.$("#map_navigate #tip"),
+										$exit: parent.$("#map_navigate .btns #exit"),
+										$bus: parent.$("#map_navigate .btns #bus"),
+										$drive: parent.$("#map_navigate .btns #drive"),
+										$close: parent.$("#map_navigate img#close"),
+										current_Navigate_kind: ""
+									};
+									parent.map_navigate.$nmap.slideDown(function() {
+										// 1.导航地图
+										parent.map_navigate.map = new qq.maps.Map(parent.map_navigate.$nmap.find(".map")[0], {
+											center: map_center,
+											zoom: zoom,
+											panControl: false,
+											zoomControl: false,
+											scaleControl: false,
+											mapTypeControl: false
+										});
+										// 2.地址标志
+										parent.map_navigate.marker = new qq.maps.Marker({
+											position: marker_center,
+											clickable: true,
+											map: parent.map_navigate.map
+										});
+										parent.map_navigate.infoWin = new qq.maps.InfoWindow({
+											position: marker_center,
+											content: '<p style="width: 160px;margin: 0px;font-size:16px;">' + label + '</p><p id="Navigate_notify" style="font-size: 12px;margin: 0px;margin-top:2px;">' + _address + '</p></div>',
+											map: parent.map_navigate.map
+										});
+										parent.map_navigate.infoWin.open();
+										qq.maps.event.addListener(parent.map_navigate.marker, 'click', function() {
+											parent.map_navigate.infoWin.open();
+											$("#Navigate_notify").html(_address);
+										});
+										qq.maps.event.addListener(parent.map_navigate.map, 'click', function() {
+											parent.map_navigate.infoWin.close();
+										});
+
+										// 退出导航模式
+										parent.map_navigate.$exit.on(click_event, function() {
+											parent.map_navigate.$nmap.slideUp(function() {
+												parent.$("#map_navigate").html("").hide();
+												delete parent.map_navigate;
+											});
+										});
+										// “公交”、“自驾”、“关闭”点击处理
+										parent.map_navigate.$bus.on(click_event, function() {
+											beginLocate("bus");
+										});
+										parent.map_navigate.$drive.on(click_event, function() {
+											beginLocate("drive");
+										});
+										parent.map_navigate.$close.on(click_event, function() {
+											parent.map_navigate.$tip.slideUp();
+										});
+									});
+								}
+							}
+						});
+						geocoder.getAddress(marker_center);
+					});
+
+					// 定位函数
+					function beginLocate(kind) {
+						parent.$("#map_navigate #Navigate_notify").html("正在定位...");
+						if (!window.navigator.geolocation) {
+							parent.$("#map_navigate #Navigate_notify").html("sorry！您的设备不支持定位功能.");
+							return;
+						}
+						getLocation(function(p) {
+							beginNavigate(kind, p, marker_center);
+						}, function(msg) {
+							parent.$("#map_navigate #Navigate_notify").html(msg);
+						});
+					}
+					
+					var directionsService = null, 
+						transferService = null, 
+						step_line;
+					// 导航函数
+					function beginNavigate(kind, from, to) {
+						if (kind == "bus" && parent.map_navigate.current_Navigate_kind != "bus") 
+						{
+							step_line && step_line.setMap(null);
+							directionsService && directionsService.clear();
+							transferService = new qq.maps.TransferService({
+								map: parent.map_navigate.map,
+								complete: function(response) {
+									parent.map_navigate.infoWin.close();
+									parent.map_navigate.marker.setVisible(false);
+									(!parent.map_navigate.$tip.is(':visible')) && parent.map_navigate.current_Navigate_kind && parent.map_navigate.$tip.slideDown();
+									renderBusTips(response);
+								},
+								error: function(data) {
+									alert(data);
+								}
+							});
+							transferService.search(from, to);
+						} 
+						else if (kind == "drive" && parent.map_navigate.current_Navigate_kind != "drive") 
+						{
+							step_line && step_line.setMap(null);
+							transferService && transferService.clear();
+							directionsService = new qq.maps.DrivingService({
+								policy: qq.maps.TransferActionType.LEAST_TIME,
+								map: parent.map_navigate.map,
+								complete: function(response) {
+									parent.map_navigate.infoWin.close();
+									parent.map_navigate.marker.setVisible(false);
+									(!parent.map_navigate.$tip.is(':visible')) && parent.map_navigate.current_Navigate_kind && parent.map_navigate.$tip.slideDown();
+									renderDriveTips(response);
+								},
+								error: function(data) {
+									alert(data);
+								}
+							});
+							directionsService.search(from, to);
+						} 
+						else
+							(!parent.map_navigate.$tip.is(':visible')) && parent.map_navigate.current_Navigate_kind && parent.map_navigate.$tip.slideDown();
+						parent.map_navigate.current_Navigate_kind = kind;
+					}
+
+					// 自驾文字说明
+					function renderDriveTips(response) {
+						var routes_desc = "";
+						var route = response.detail.routes[0];
+
+						//调整地图窗口显示所有路线	  
+						map.fitBounds(response.detail.bounds);
+						
+						parent.map_navigate.renderDriveStep = function(index) {
+							var step = route.steps[index];
+							//clear overlays;
+							step_line && step_line.setMap(null);
+							//draw setp line
+							step_line = new qq.maps.Polyline(
+							{
+								path: step.path,
+								strokeColor: '#ff0000',
+								strokeWeight: 6,
+								map: parent.map_navigate.map
+							}
+							);
+							parent.map_navigate.$tip.find("tr.route").css("background-color", "white");
+							parent.map_navigate.$tip.find("#route_" + index).css("background-color", "rgb(240, 240, 240)");
+						};
+						// 所有路段信息
+						for (var k = 0; k < route.steps.length; k++) {
+							var step = route.steps[k];
+							//转向
+							var turning = step.turning, 
+								img_position;
+							switch (turning.text) {
+								case '左转':
+									img_position = '0px 0px'
+									break;
+								case '右转':
+									img_position = '-19px 0px'
+									break;
+								case '直行':
+									img_position = '-38px 0px'
+									break;
+								case '偏左转':
+								case '靠左':
+									img_position = '-57px 0px'
+									break;
+								case '偏右转':
+								case '靠右':
+									img_position = '-76px 0px'
+									break;
+								case '左转调头':
+									img_position = '-95px 0px'
+									break;
+								default:
+									img_position = '';
+									break;
+							} // diazo/img
+							var turning_img = '<span style="margin-bottom: -4px; display:inline-block; background: url(../../../../diazo/img/map/turning.png) no-repeat ' + img_position + ';width:19px;height: 19px"></span>&nbsp;';
+							
+							routes_desc += '<tr class="route" id="route_' + k + '" ' + 'on' + click_event + '="map_navigate.renderDriveStep(' + k + ')"' + ' style="cursor:pointer;"><td style="text-align: right;padding: 5px 10px;border-bottom: 1px solid #ccc;width: 40px;">' + (k + 1) + 
+							'.</td><td style="padding: 5px 10px;border-bottom: 1px solid #ccc;line-height: 150%;">' + turning_img + step.instructions + '</td></tr>';
+						}
+						parent.map_navigate.$tip.children("table").html(routes_desc);
+						parent.map_navigate.$tip.find("h1 span").html("驾车");
+						parent.map_navigate.$tip.find("#tip_bottom span.distance").html((response.detail.distance / 1000).toFixed(2));
+						parent.map_navigate.$tip.find("#tip_bottom span.day").html(parseInt(response.detail.duration / (24 * 60)));
+						parent.map_navigate.$tip.find("#tip_bottom span.hour").html((response.detail.duration % (24 * 60) / 60).toFixed(2));
+					}
+					// 公交文字说明
+					function renderBusTips(response) {
+						var routes_desc = "";
+						var plan = response.detail.plans[0];
+						var actions = plan.actions;
+						
+						parent.map_navigate.renderBusStep = function(ai, li) {
+							var action = actions[ai];
+							var path;
+							if (action.type == qq.maps.TransferActionType.WALK)
+								path = plan.walks[li].path;
+							else
+								path = plan.lines[li].path;
+							//clear overlays;
+							step_line && step_line.setMap(null);
+							//draw setp line
+							step_line = new qq.maps.Polyline(
+							{
+								path: path,
+								strokeColor: '#ff0000',
+								strokeWeight: 6,
+								map: parent.map_navigate.map
+							}
+							);
+							parent.map_navigate.$tip.find("tr.route").css("background-color", "white");
+							parent.map_navigate.$tip.find("#route_" + ai).css("background-color", "rgb(240, 240, 240)");
+						};
+						
+						var bus_i = 0, walk_i = 0;
+						for (var j = 0; j < actions.length; j++) {
+							var action = actions[j], 
+								img_position, p_attributes;
+							action.type == qq.maps.TransferActionType.BUS && (
+							img_position = '-38px 0px', 
+							p_attributes = 'on' + click_event + '="map_navigate.renderBusStep(' + j + ',' + (bus_i++) + ')"'
+							);
+							action.type == qq.maps.TransferActionType.SUBWAY && (
+							img_position = '-57px 0px', 
+							p_attributes = 'on' + click_event + '="map_navigate.renderBusStep(' + j + ',' + (bus_i++) + ')"'
+							);
+							action.type == qq.maps.TransferActionType.WALK && (
+							img_position = '-76px 0px', 
+							p_attributes = 'on' + click_event + '="map_navigate.renderBusStep(' + j + ',' + (walk_i++) + ')"'
+							);
+							
+							var action_img = '<span style="margin-bottom: -4px; display:inline-block;background:url(../../../../diazo/img/map/busicon.png) no-repeat ' + img_position + 
+							';width:19px;height:19px"></span>&nbsp;&nbsp;';
+							
+							routes_desc += "<tr class=\"route\" id=\"route_" + j + "\" style='cursor:pointer;' " + p_attributes + "><td style=\"text-align: right;padding: 5px 10px;border-bottom: 1px solid #ccc;width: 40px;\">" + (j + 1) + 
+							".</td><td style=\"padding: 5px 10px;border-bottom: 1px solid #ccc;line-height: 150%;\">" + action_img + action.instructions + "</td></tr>";
+						}
+						parent.map_navigate.$tip.children("table").html(routes_desc);
+						parent.map_navigate.$tip.find("h1 span").html("公交");
+						parent.map_navigate.$tip.find("#tip_bottom span.distance").html((plan.distance / 1000).toFixed(2));
+						parent.map_navigate.$tip.find("#tip_bottom span.day").html(parseInt(plan.duration / (24 * 60)));
+						parent.map_navigate.$tip.find("#tip_bottom span.hour").html((plan.duration % (24 * 60) / 60).toFixed(2));
+					}
+				} 
+				// 设计模式
+				else 
+				{
+					var searchService,
+						searchMarkers = [],
+						searchKeyword,
+						searchBounds = new qq.maps.LatLngBounds();
+
+					searchService = new qq.maps.SearchService({
+						map: map,
+						complete: function(results) {
+							if(!results.detail.pois)
+							{
+								message("info", "未查询到结果！");
+								return;
+							}
+							// 新建一个地图
+							map = new qq.maps.Map($smap[0], {
+								center: map_center,
+								zoom: 5
+							});
+							var pois = results.detail.pois;
+							for (var i = 0, l = pois.length; i < l; i++) {
+								var poi = pois[i];
+								//扩展边界范围，用来包含搜索到的Poi点
+								searchBounds.extend(poi.latLng);
+								var _marker = new qq.maps.Marker({
+									map: map,
+									position: poi.latLng
+								});
+
+								qq.maps.event.addListener(_marker, 'click', function(e) {
+									map_center = marker_center = e.latLng;
+									var overlay;
+									while(overlay = searchMarkers.pop())
+										overlay.setMap(null);
+									// 选取这个地点作为目标地点
+									label = searchKeyword;
+									createOverlay(map_center, label);
+									reBind();
+									handle();
+									$("#keyword").val("");
+								});
+
+								_marker.setTitle(poi.name + "\n" + poi.address);
+								searchMarkers.push(_marker);
+							}
+							//调整地图视野
+							map.fitBounds(searchBounds);
+							return false;
+						}
+					});
+					// 插入搜索对应的dom
+					$("body").prepend('<div class="search">'+
+						'	<input id="keyword" type="text">'+
+						'	<input id="search" type="button" value="搜索">'+
+						'</div>');
+					$("#search").click(function(e){
+						// 开始搜索
+						flag_search = true;
+						searchKeyword = $("#keyword").val().trim();
+						if(searchKeyword != "")
+							searchService.search(searchKeyword);
+					});
+					function reBind(){
+						// 标签随标志移动
+						qq.maps.event.addListener(marker, 'dragend', function() {
+							var marker_center = marker.getPosition();
+							infoLabel.setPosition(marker_center);
+						});
+
+						// 侦听事件，并更新地图属性
+						qq.maps.event.addListener(map, 'zoom_changed', handle);
+						qq.maps.event.addListener(map, 'dragend', handle);
+						qq.maps.event.addListener(marker, 'dragend', handle);
+					}
+					reBind();
+				}
+			});
+		</script>
+	</body>
+</html>
