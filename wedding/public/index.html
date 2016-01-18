@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 移动端不缩放 -->
+<meta name="viewport" content="width=device-width,initial-scale=1,maxinum-scale=1,user-scalable=no">
+<link href="assets/css/lib/base.css" rel="stylesheet">
+<link href="assets/css/lib/swiper.css" rel="stylesheet">
+<link href="assets/css/lib/indexself.css" rel="stylesheet">
+<link href="assets/css/lib/animate.css" rel="stylesheet">
+<link href="assets/css/data.css" rel="stylesheet">
+<link href="assets/css/index.css" rel="stylesheet">
+<title></title>
+</head>
+<body>
+  <!-- 全局 -->
+  <div class="container main">
+  <!-- 加载 -->
+  <div class="loading" id="loading">
+      <div class="prosess">
+          <div class="lemon">
+              <div class="went"></div>
+              <div class="going"></div>
+          </div>
+      </div>
+  </div>
+
+  <!-- 背景音乐 -->
+  <div id="bmg">
+      <div id="audio-btn" class="on" onclick="bmg.changeClass(this,'media')">
+          <audio loop="loop" src="" id="media" preload="preload"></audio>
+      </div>
+  </div>
+
+<!-- 主内容  -->
+  <div class="swiper-container main-swiper">
+      <div class="swiper-wrapper">
+            <div class="swiper-slide one stop-swiping">
+               <div class="pagebg">
+                    <img src="assets/images/back_img.jpg">
+               </div>
+               <div class="pagecontent">
+                       <div class="blank"></div>
+                       <div>
+                           <div class="imgs">
+                               <img class="x" id="svga" src="assets/images/x_1.png">
+                               <img class="x" id="svgb" src="assets/images/x_2.png">
+                               <img class="x" id="svgc" src="assets/images/x_3.png">
+                               <img class="x" id="svgd" src="assets/images/x_4.png">
+                           </div>
+                           <div class="happyWord" id="arrowa">
+                               <div class="word_top">
+                                   <img class="happy hidden" src="assets/images/happyCome.png" />
+                                   <img class="heart hidden" src="assets/images/heart.png" />
+                               </div>
+                               <div class="word_bottom">
+                                   <img class="arrows hidden" src="assets/images/arrows.png" />
+                               </div>
+                           </div>
+                       </div>
+                       <section class="one_partTwo">
+                           <div class="wordEnglish hidden">
+                               <div class="text">刘晓多</div>
+                               <div class="text2">先生<img src="assets/images/englishWords.png"/></div>
+                           </div>
+                           <div class="blingstar hidden">
+                               <img class="starone" src="assets/images/star.png" />
+                               <img class="startwo" src="assets/images/star.png" />
+                               <img class="starthree" src="assets/images/star.png" />
+                               <img class="starfour" src="assets/images/star.png" />
+                           </div>
+                           <div class="contentWo">
+                               <div class="fireAll">
+                                   <div class="fireCreak">
+                                       <div class="boom hidden">
+                                           <img class="fireTwo hidden" src="assets/images/firetwo.png" />
+                                           <img class="fireOther hidden" src="assets/images/fireother.png" />
+                                       </div>
+                                   </div>
+                                   <div class="tip hidden">
+                                       <img src="assets/images/TIPS.png">
+                                   </div>
+                                   <div class="match hidden">
+                                       <img id="target" src="assets/images/match.png"/>
+                                   </div>
+                                   <p class="fireP hidden"><img class="fire" src="assets/images/fire.png" /></p>
+                                   <img class="lead hidden" src="assets/images/lead.png" />
+                                   <img class="creak hidden" src="assets/images/firecracker.png" />
+                               </div>
+                           </div>
+                       </section>
+               </div>
+            </div>
+            <div class="swiper-slide two">
+                  <div class="pagebg">
+                      <img src="assets/images/backTwo.jpg">
+                  </div>
+                  <div class="pagecontent">
+                      <div class="tie hidden">
+                          <div class="matter hidden" id="P2_TXT">
+                              <p class="name">刘晓多</p>
+                              <p class="acr">先生</p>
+                              <p class="add">仪式地址<br/>：<span class="line">崇明岛岛上</span></p>
+                              <p class="add">将是我们最大的荣耀</p>
+                              <p class="add">您的光临和祝福</p>
+                              <p class="add">11点30分举行婚礼仪式</p>
+                              <p class="add">20</br>14年10月01日</p>
+                              <p class="add">沉浸在幸福中的我们将于</p>
+                          </div>
+                          <div class="matterTwo hidden" id="P3_TXT">
+                              <p class="name2">刘晓庆<br />&nbsp;&<br />韩老六</p>
+                              <p class="oath">
+                              <img src="assets/images/blessing.png" />
+                              </p>
+                          </div>
+                          <div class="matterThree">
+                              <div class="flower flower1 hidden"></div>
+                              <div class="flower flower2 hidden"></div>
+                          </div>
+                          <div class="upDownarrows">
+                              <img src="assets/images/photo_up.png" />
+                          </div>
+                      </div>
+
+                  </div>
+            </div>
+            <div class="swiper-slide three">
+                  <div class="pagebg">
+                      <!--<img src="assets/images/backTwo.jpg">-->
+                  </div>
+                  <div class="pagecontent">
+                      <!--<section class="shade hidden"></section>-->
+                      <ul id="papers" class="paper">
+                          <li class="frame" id="frame">
+                              <img class="photo" src="assets/images/photo.jpg" />
+                              <img class="bordershape" src="assets/images/border.png" />
+                          </li>
+                          <li class="frame" id="frame">
+                              <img class="photo" src="assets/images/happyCome.png" />
+                              <img class="bordershape" src="assets/images/border.png" />
+                          </li>
+                          <li class="frame" id="frame">
+                              <img class="photo" src="assets/images/photo.jpg" />
+                              <img class="bordershape" src="assets/images/border.png" />
+                          </li>
+                          <li class="frame twoframe" id="frame">
+                              <img class="photo" src="assets/images/happyCome.png" />
+                              <img class="bordershape" src="assets/images/border.png" />
+                          </li>
+                      </ul>
+                      <div class="left_arrows">
+                          <img src="assets/images/left_arrows.png" />
+                      </div>
+                      <div class="right_arrows">
+                          <img src="assets/images/right_arrows.png" />
+                      </div>
+                      <div class="upDownarrows">
+                          <img src="assets/images/photo_up.png" />
+                      </div>
+                  </div>
+           </div>
+
+          <div class="swiper-slide four">
+              <div class="pagebg">
+                  <!--<img src="assets/images/backTwo.jpg">-->
+                  <section class="blurbg hidden">
+                      <img class="refused" src="assets/images/refused.png" />
+                      <img class="calling" src="assets/images/calling.png" />
+                  </section>
+              </div>
+              <div class="pagecontent">
+                  <section class="fourPartOne">
+                      <div class="blank height"></div>
+                          <div class="title">
+                            <img src="assets/images/title.png" />
+                          </div>
+                          <div id="carrousel" class="caroursel rotator-demo">
+                              <ul class="rotator-list">
+                                  <li class="rotator-item">
+                                      <p class="honored"><span class="honoredName">钱1</span><span class="data">2015-4-12</span><span >19:30</span></p>
+                                      <p class="border"></p>
+                                      <p class="blessings">祝你们永远相爱。</p>
+                                  </li>
+                                  <li class="rotator-item">
+                                      <p class="honored"><span class="honoredName">钱2</span><span class="data">2015-4-12</span><span >19:30</span></p>
+                                      <p class="border"></p>
+                                      <p class="blessings">祝你们永远相爱。</p>
+                                  </li>
+                                  <li class="rotator-item">
+                                      <p class="honored"><span class="honoredName">钱3</span><span class="data">2015-4-12</span><span >19:30</span></p>
+                                      <p class="border"></p>
+                                      <p class="blessings">祝你们永远相爱。</p>
+                                  </li>
+                              </ul>
+                              <div class="left_arrows left" id="carrousel_prev" >
+                                  <img src="assets/images/left_arrows.png" />
+                              </div>
+                              <div class="right_arrows right" id="carrousel_next">
+                                    <img src="assets/images/right_arrows.png" />
+                              </div>
+                          </div>
+                          <div class="blessingWrite">
+                                <img class="write" src="assets/images/writeBlessing.png" />
+                                <div class="giftwords">
+                                    <img class="click_write"  src="assets/images/click.png"/>
+                                    <textarea class="textwrite hidden"></textarea>
+                                </div>
+                                <p id="submit" class="submitAll hidden">
+                                    <img class="submit" src="assets/images/submit.png" />
+                                </p>
+                                <div class="upDownarrows pagefive">
+                                    <img src="assets/images/photo_up.png" />
+                                    <span class="skip">向上滑动跳过留言</span>
+                                </div>
+                          </div>
+                  </section>
+                  <section class="fourpartTwo hidden">
+                      <div class="tie tieTwo tieThree">
+                          <div class="backCard">
+                              <img class="backcard" src="assets/images/backCard.png" />
+                              <div class="signature">
+                                  <span class="signatureTitle">签&nbsp;名:&nbsp;</span>
+                                  <p class="nameSignature">区伯</p>
+                              </div>
+                              <div class="choose">
+                                  <form class="status">
+                                      <div class="chooseOne">
+                                          <img class="heart_notchoose" src="assets/images/heart_notchoose.png"/>
+                                          <input type="radio" name="choose" class="chooRadio" value="1"/>
+                                          <img class="heart_choose hidden" src="assets/images/heart_choose.png" />
+                                  <span>
+                                        <img class="join" src="assets/images/join.png" />
+                                  </span>
+                                      </div>
+                                      <div class="chooseOne">
+                                          <img class="heart_notchoose notchooseAgain" src="assets/images/heart_notchoose.png"/>
+                                          <input type="radio" name="choose" class="chooRadio inputtwo" value="0"/>
+                                          <img class="heart_choose chooseAgain hidden" src="assets/images/heart_choose.png" />
+                                      <span>
+                                        <img class="undetermined" src="assets/images/undetermined.png" />
+                                      </span>
+                                      </div>
+                                  </form>
+                                  <form class="row">
+                                      <div class="row_one">
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count"  class="count" value="1"/>
+                                                  <img class="one1_number1" src="assets/images/one.png"/>
+                                                  <img class="one1_number2  hidden" src="assets/images/one_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/one_2.png" />
+                                          </p>
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count" class="count" value="2" />
+                                                  <img class="one1_number1 second" src="assets/images/two.png"/>
+                                                  <img class="one1_number2 hidden" src="assets/images/two_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/two_2.png" />
+                                          </p>
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count" class="count" value="3" />
+                                                  <img class="one1_number1 third" src="assets/images/three.png"/>
+                                                  <img class="one1_number2 hidden" src="assets/images/three_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/three-2.png" />
+                                          </p>
+                                          <br />
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count"  class="count" value="4"/>
+                                                  <img class="one1_number1" src="assets/images/four.png"/>
+                                                  <img class="one1_number2 hidden" src="assets/images/four_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/four_2.png" />
+                                          </p>
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count"  class="count" value="5"/>
+                                                  <img class="one1_number1" src="assets/images/five.png"/>
+                                                  <img class="one1_number2 hidden" src="assets/images/five_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/five_2.png" />
+                                          </p>
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count"  class="count" value="6"/>
+                                                  <img class="one1_number1" src="assets/images/six.png"/>
+                                                  <img class="one1_number2 hidden" src="assets/images/six_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/six_2.png" />
+                                          </p>
+                                          <br />
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count"  class="count" value="7"/>
+                                                  <img class="one1_number1" src="assets/images/seven.png"/>
+                                                  <img class="one1_number2 hidden" src="assets/images/seven_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/seven_2.png" />
+                                          </p>
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count"  class="count" value="8"/>
+                                                  <img class="one1_number1" src="assets/images/eight.png"/>
+                                                  <img class="one1_number2 hidden" src="assets/images/eight_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/eight_2.png" />
+                                          </p>
+                                          <p class="one1">
+                                              <span class="amount hidden">
+                                                  <input type="radio" name="count"  class="count" value="9"/>
+                                                  <img class="one1_number1" src="assets/images/nine.png"/>
+                                                  <img class="one1_number2 hidden" src="assets/images/nine_1.png" />
+                                              </span>
+                                              <img class="one1_number3" src="assets/images/nine_2.png" />
+                                          </p>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                          <div class="formSubmit">
+                              <img src="assets/images/submit.png" />
+                          </div>
+                      </div>
+                  </section>
+              </div>
+          </div>
+          <!--新添加的页面，需要对接人员按情况放置-->
+          <!--<div class="swiper-slide datapage">-->
+              <!--<div class="pagebg">-->
+                  <!--<img src="assets/images/back_img.jpg">-->
+              <!--</div>-->
+              <!--<div class="pagecontent">-->
+                  <!--<div class="honored">-->
+                      <!--<img class="datawordOne" src="assets/images/dataWordone.png"/>-->
+                      <!--<p class="couplename">-->
+                          <!--<span>徐汉中</span>-->
+                          <!--<span>&</span>-->
+                          <!--<span>丁云婷</span>-->
+                      <!--</p>-->
+                      <!--<img class="datawordTwo" src="assets/images/wordTwo.png">-->
+                  <!--</div>-->
+                  <!--<div class="flght">-->
+                  		<!--<div class="flghtRight">-->
+                  				<!--<img class="leftOne" src="assets/images/middle.png">-->
+		                      <!--<img class="leftTwo" src="assets/images/rightOne.png">-->
+                  		<!--</div>-->
+	                  	<!--<div class="flghtLeft">-->
+		                  		<!--<img class="middle" src="assets/images/middle.png">-->
+		                      <!--<img class="rightOne" src="assets/images/rightOne.png">-->
+	                  	<!--</div>               -->
+                      <!--<p class="dataNumber">-->
+                          <!--<span>222&nbsp;</span>-->
+                      <!--</p>-->
+                  <!--</div>-->
+                  <!--<div class="cut">-->
+                      <!--<img class="paperCutleft" src="assets/images/paperCutleft.png">-->
+                      <!--<img class="paperCutright" src="assets/images/paperCutRight.png">-->
+                  <!--</div>-->
+              <!--</div>-->
+          <!--</div>-->
+      </div>
+  </div>
+</div>
+<script type="text/javascript" src="assets/js/lib/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/jquery.self.adaption.js"></script>
+<script src="assets/js/lib/jquery.mobile-events.min.js"></script>
+<script src="assets/js/lib/touch-min.js"></script>
+<script type="text/javascript" src="assets/js/lib/animo.js"></script>
+<script type="text/javascript" src="assets/js/lib/jquery.paper-slider.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/zoumadeng.js"></script>
+<script type="text/javascript" src="assets/js/lib/jquery.imgpreload.min.js"></script>
+<script type="text/javascript" src="assets/js/index.js"></script>
+</body>
+</html>

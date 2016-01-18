@@ -1,0 +1,215 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+html,body{
+    width: 100%;
+
+    height: 100%;
+    overflow: hidden;
+}
+.datapage{
+    background: url(../images/back_img.jpg) no-repeat center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 35px;
+    display: block;
+}
+.datawordOne,.datawordTwo{
+    z-index: 10;
+    width: 60%;
+    position: relative;
+}
+.couplename>span{
+    color: #ffdb9c;
+    font-size: 28px;
+}
+@media only screen and (min-width:370px) and (max-width:450px) {
+    .couplename>span{
+        color: #ffdb9c;
+        font-size: 35px;
+    }
+    .dataNumber{
+        background-image: url("../images/dataNumber.png");
+        width: 100%!important;
+        height: 360px!important;
+        background-size: 100% 100%;
+        z-index: 1111;
+        position: relative;
+    }
+}
+.honored{
+    z-index: 1111;
+}
+.flght{
+    text-align: left;
+    z-index: 11;
+}
+.leftOne{
+ 	width: 31%;
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: rotate(-2deg);
+    z-index: 1;
+    animation: righttwo 3s infinite;
+    -webkit-animation: righttwo 3s infinite;
+}
+@keyframes righttwo{
+	from{
+		transform-origin: 0 100%;
+		transform: rotate(-2deg);
+	}
+	to{
+		transform-origin: 0 100%;
+		transform: rotate(-87deg);
+	}
+}
+@-webkit-keyframes righttwo{
+	from{
+		transform-origin: 0 100%;
+		transform: rotate(-2deg);
+	}
+	to{
+		transform-origin: 0 100%;
+		transform: rotate(-87deg);
+	}
+}
+.leftTwo{
+    width: 43%;
+    position: absolute;
+    top: 5%;
+    left: 48%;
+    transform: rotate(-84deg);
+    animation: rightone 3s infinite;
+    -webkit-animation: rightone 3s infinite;
+}
+@keyframes rightone{
+	from{
+		transform-origin: 0 100%;
+		-webkit-transform: rotate(-124deg);
+	}
+	to{
+		transform-origin: 0 100%;
+		-webkit-transform: rotate(-23deg);
+	}
+}
+@-webkit-keyframes rightone{
+	from{
+		-webkit-transform-origin:0 100%;
+		-webkit-transform: rotate(-124deg);
+	}
+	to{
+		-webkit-transform-origin:0 100%;
+		-webkit-transform: rotate(-23deg);
+	}
+}
+.middle{
+    width: 29%;
+    position: absolute;
+    left: 40%;
+    right: 0;
+    top: 12%;
+    z-index: 1;
+    transform: rotate(2deg);
+    animation: lightwo 3s infinite;
+    -webkit-animation: lightwo 3s infinite;
+}
+@keyframes lightwo{
+	from{
+		transform-origin: 0 100%;
+		transform: rotate(2deg);
+	}
+	to{
+		transform-origin: 0 100%;
+		transform: rotate(67deg);
+	}
+}
+@-webkit-keyframes lightwo{
+	from{
+		transform-origin: 0 100%;
+		transform: rotate(2deg);
+	}
+	to{
+		transform-origin: 0 100%;
+		transform: rotate(67deg);
+	}
+}
+.rightOne{
+    width: 40%;
+    position: absolute;
+    top: 8%;
+    right: 0%;
+    transform: rotate(87deg);
+    animation: lightone 3s infinite;
+    -webkit-animation: lightone 3s infinite;
+}
+@keyframes lightone{
+	from{
+		transform-origin: 0 100%;
+		transform: rotate(87deg);
+	}
+	to{
+		transform-origin: 0 100%;
+		transform: rotate(-15deg);
+	}
+}
+@-webkit-keyframes lightone{
+	from{
+		-webkit-transform-origin:0 100%;
+		-webkit-transform: rotate(87deg);
+	}
+	to{
+		-webkit-transform-origin:0 100%;
+		-webkit-transform: rotate(-15deg);
+	}
+}
+.dataNumber{
+    background-image: url("../images/dataNumber.png");
+    width: 100%!important;
+    height: 553px!important;
+    background-size: 100% 100%;
+    z-index: 1111;
+    position: relative;
+}
+.cut{
+    width: 100%;
+}
+.paperCutleft{
+    width: 100%;
+    position: absolute;
+    left: -35%;
+    top: 61%;
+}
+.paperCutright{
+    width: 100%;
+    position: absolute;
+    right: -37%;
+    top: 60%;
+    z-index: 2222222222;
+}
+.hidden{
+    display: none;
+}
+.dataNumber{
+    font-size: 3rem;
+    color: #ffdb9c;
+    overflow: hidden;
+}
+.dataNumber>span{
+    max-width: 234px;
+    height: 170px;
+    display: block;
+    font-size: 13rem;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 24%;
+    text-align: left;
+    position: absolute;
+    right: 39%;
+
+}
